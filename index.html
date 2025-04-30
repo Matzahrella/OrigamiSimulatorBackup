@@ -801,1258 +801,1322 @@
 </head>
 <body>
 
-<div class="modal fade" id="aboutModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <p>
-                <b>ORIGAMI SIMULATOR</b><br/>
-
-                    <img style="width: 100%; max-width:500px" src="assets/doc/crane.gif" />
-
-                    This app allows you to simulate how any origami crease pattern will fold.  It may look a little different
-                    from what you typically think of as "origami" - rather than folding paper in a set of sequential steps,
-                    this simulation attempts to fold every crease simultaneously. It does this by iteratively solving for small displacements in the geometry of an initially flat sheet due to forces
-                    exerted by creases.
-                    You can read more about it in our paper:
-                    <ul>
-                    <li><a target="_blank" href="http://erikdemaine.org/papers/OrigamiSimulator_Origami7/">Fast, Interactive Origami Simulation using GPU Computation</a> by Amanda Ghassaei, Erik Demaine, and Neil Gershenfeld (7OSME)
-                    </ul>
-
-                    All simulation methods were written from scratch and are executed in parallel in several GPU fragment shaders for fast performance.
-                    The solver extends work from the following sources:
-                    <ul>
-                    <li><a target="_blank" href="http://www2.eng.cam.ac.uk/~sdg/preprint/5OSME.pdf">Origami Folding: A Structural Engineering Approach</a> by Mark Schenk and Simon D. Guest<br/>
-                    <li><a target="_blank" href="http://www.tsg.ne.jp/TT/cg/TachiFreeformOrigami2010.pdf">Freeform Variations of Origami</a> by Tomohiro Tachi<br/>
-                    </ul>
+    <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                     <p>
-                    This app also uses the methods described in <a href="http://www.cgg.cs.tsukuba.ac.jp/projects/2020/RulingAwareTriangulation/index.html" target="_blank">Simple Simulation of Curved Folds Based on Ruling-aware Triangulation</a> to import curved crease patterns and pre-process them in a way that realistically simulates the bending between the creases.
+                        <b>ORIGAMI SIMULATOR</b><br />
+
+                        <img style="width: 100%; max-width:500px" src="assets/doc/crane.gif" />
+
+                        This app allows you to simulate how any origami crease pattern will fold.  It may look a little different
+                        from what you typically think of as "origami" - rather than folding paper in a set of sequential steps,
+                        this simulation attempts to fold every crease simultaneously. It does this by iteratively solving for small displacements in the geometry of an initially flat sheet due to forces
+                        exerted by creases.
+                        You can read more about it in our paper:
+                        <ul>
+                            <li><a target="_blank" href="http://erikdemaine.org/papers/OrigamiSimulator_Origami7/">Fast, Interactive Origami Simulation using GPU Computation</a> by Amanda Ghassaei, Erik Demaine, and Neil Gershenfeld (7OSME)
+                        </ul>
+
+                        All simulation methods were written from scratch and are executed in parallel in several GPU fragment shaders for fast performance.
+                        The solver extends work from the following sources:
+                        <ul>
+                            <li><a target="_blank" href="http://www2.eng.cam.ac.uk/~sdg/preprint/5OSME.pdf">Origami Folding: A Structural Engineering Approach</a> by Mark Schenk and Simon D. Guest<br />
+                            <li><a target="_blank" href="http://www.tsg.ne.jp/TT/cg/TachiFreeformOrigami2010.pdf">Freeform Variations of Origami</a> by Tomohiro Tachi<br />
+                        </ul>
+                    <p>
+                        This app also uses the methods described in <a href="http://www.cgg.cs.tsukuba.ac.jp/projects/2020/RulingAwareTriangulation/index.html" target="_blank">Simple Simulation of Curved Folds Based on Ruling-aware Triangulation</a> to import curved crease patterns and pre-process them in a way that realistically simulates the bending between the creases.
                     </p>
 
                     <p>
-                    Originally built by <a href="https://amandaghassaei.com/" target="_blank">Amanda Ghassaei</a> as a final project for <a href="http://courses.csail.mit.edu/6.849/spring17/" target="_blank">Geometric Folding Algorithms</a>.
-                    Other contributors include <a href="http://www.cgg.cs.tsukuba.ac.jp/~sasaki_k/" target="_blank">Sasaki Kosuke</a>, <a href="http://erikdemaine.org/" target="_blank">Erik Demaine</a>, and <a href="https://github.com/amandaghassaei/OrigamiSimulator/graphs/contributors" target="_blank">others</a>.
-                    Code available on <a href="https://github.com/amandaghassaei/OrigamiSimulator" target="_blank">Github</a>.  If you have interesting crease patterns that would
-                    make good demo files, please send them to me (Amanda) so I can add them to the <b>Examples</b> menu.  My email address is on my website.  Thanks!<br/>
-                </p><br/>
-                    <b>Instructions:</b><br/><br/>
-                    <img style="width: 100%; max-width:600px" src="assets/doc/demoui.gif" /><br/>
+                        Originally built by <a href="https://amandaghassaei.com/" target="_blank">Amanda Ghassaei</a> as a final project for <a href="http://courses.csail.mit.edu/6.849/spring17/" target="_blank">Geometric Folding Algorithms</a>.
+                        Other contributors include <a href="http://www.cgg.cs.tsukuba.ac.jp/~sasaki_k/" target="_blank">Sasaki Kosuke</a>, <a href="http://erikdemaine.org/" target="_blank">Erik Demaine</a>, and <a href="https://github.com/amandaghassaei/OrigamiSimulator/graphs/contributors" target="_blank">others</a>.
+                        Code available on <a href="https://github.com/amandaghassaei/OrigamiSimulator" target="_blank">Github</a>.  If you have interesting crease patterns that would
+                        make good demo files, please send them to me (Amanda) so I can add them to the <b>Examples</b> menu.  My email address is on my website.  Thanks!<br />
+                    </p><br />
+                    <b>Instructions:</b><br /><br />
+                    <img style="width: 100%; max-width:600px" src="assets/doc/demoui.gif" /><br />
 
                     <ul>
-                        <li>Slide the <b>Fold Percent</b> slider to control the degree of folding of the pattern (100% is fully folded, 0% is unfolded,
-                            and -100% is fully folded with the opposite mountain/valley assignments).</li>
+                        <li>
+                            Slide the <b>Fold Percent</b> slider to control the degree of folding of the pattern (100% is fully folded, 0% is unfolded,
+                            and -100% is fully folded with the opposite mountain/valley assignments).
+                        </li>
                         <li>Drag to rotate the model, scroll to zoom.</li>
                         <li>Import other patterns under the <b>Examples</b> menu.</li>
                         <li>Upload your own crease patterns in SVG or <a href="https://github.com/edemaine/fold" target="_blank">FOLD</a> formats, following <a href="#" class="goToImportInstructions">these instructions</a>.</li>
                         <li>Export FOLD files or 3D models ( STL or OBJ ) of the folded state of your design ( <b>File > Save Simulation as...</b> ).</li>
                     </ul>
-                        <img style="width: 100%;" src="assets/doc/strain.jpg" />
+                    <img style="width: 100%;" src="assets/doc/strain.jpg" />
                     <ul>
                         <li>Visualize the internal strain of the origami as it folds using the <b>Strain Visualization</b> in the left menu of the <b>Advanced Options</b>.</li>
                     </ul>
-                        <img style="width: 100%; max-width:600px" src="assets/doc/huffmanvr.jpg" /><br/>
+                    <img style="width: 100%; max-width:600px" src="assets/doc/huffmanvr.jpg" /><br />
                     <ul>
-                        <li>If you are working from a computer connected to a VR headset and hand controllers, follow <a href="#" id="goToViveInstructions">these instructions</a>
-                            to use this app in an interactive virtual reality mode. (sorry I think this may be deprecated now!)</li>
+                        <li>
+                            If you are working from a computer connected to a VR headset and hand controllers, follow <a href="#" id="goToViveInstructions">these instructions</a>
+                            to use this app in an interactive virtual reality mode. (sorry I think this may be deprecated now!)
+                        </li>
                     </ul>
 
-                    <br/>
-                    <b>External Libraries:</b><br/><br/>
+                    <br />
+                    <b>External Libraries:</b><br /><br />
                     <ul>
                         <li>All rendering and 3D interaction done with <a target="_blank" href="https://threejs.org/">three.js</a></li>
                         <li><a href="https://github.com/fontello/svgpath" target="_blank">svgpath</a> and <a href="https://www.npmjs.com/package/path-data-polyfill" target="_blank">path-data-polyfill</a> helps with SVG path parsing</li>
-                        <li><a href="https://github.com/edemaine/fold" target="_blank">FOLD</a> is used as the internal data structure, methods from the
-                            <a href="https://github.com/edemaine/fold/blob/master/doc/api.md" target="_blank">FOLD API</a> used for SVG parsing</li>
+                        <li>
+                            <a href="https://github.com/edemaine/fold" target="_blank">FOLD</a> is used as the internal data structure, methods from the
+                            <a href="https://github.com/edemaine/fold/blob/master/doc/api.md" target="_blank">FOLD API</a> used for SVG parsing
+                        </li>
                         <li>Arbitrary polygonal faces of imported geometry are triangulated using the <a target="_blank" href="https://github.com/mapbox/earcut">Earcut Library</a> and <a href="https://github.com/mikolalysenko/cdt2d" target="_blank"></a>cdt2d</a></li>
                         <li><a href="http://www.numericjs.com/" target="_blank">numeric.js</a> for linear algebra operations</li>
                         <li>GIF and WebM video export uses <a target="_blank" href="https://github.com/spite/ccapture.js/">CCapture</a></li>
                     </ul>
-                <p>
-                    <br/>
-                    You can find additional information in <a href="http://erikdemaine.org/papers/OrigamiSimulator_Origami7/" target="_blank">our 7OSME paper</a> and <a href="http://www.amandaghassaei.com/projects/origami_simulator/" target="_blank">project website</a>.
-                    If you have feedback about features you want to see in this app, please see <a href="https://github.com/amandaghassaei/OrigamiSimulator/discussions/41" target="_blank">this thread</a>.
-                    <br/>
-                    <br/>
-                </p>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<nav id="globalNav" class="navbar navbar-inverse navbar-embossed" role="navigation">
-    <div class="navbar-header">
-        <a id="logo" class="navbar-brand" target="_blank" href="https://amandaghassaei.com/">
-            <img id="inactiveLogo" src="assets/logo.png"/>
-            <img id="activeLogo" src="assets/logo-active.png"/>
-        </a>
-    </div>
-    <div class="collapse navbar-collapse" id="navbar-collapse-01">
-        <ul class="nav navbar-nav navbar-left">
-            <li class="dropdown navDropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">File <b class="caret"></b></a>
-                <span class="dropdown-arrow"></span>
-                <ul class="dropdown-menu">
-                    <li><a class="loadFile" href="#">Import... (SVG / FOLD)</a></li>
-                    <!--<li><a id="importSettings" href="#">SVG Import Settings...</a></li>-->
-                    <li><a id="tips" href="#">Design Tips</a></li>
-                    <li class="divider"></li>
-                    <li><a id="createGif" href="#">Record animated GIF...</a></li>
-                    <li><a id="createVideo" href="#">Record video...</a></li>
-                    <li><a id="createPNG" href="#">Save PNG screenshot...</a></li>
-                    <li class="divider"></li>
-                    <li><a id="exportFOLD" href="#">Save Simulation as FOLD...</a></li>
-                    <li><a id="exportSTL" href="#">Save Simulation as STL...</a></li>
-                    <li><a id="exportOBJ" href="#">Save Simulation as OBJ...</a></li>
-                    <li class="divider"></li>
-                    <li><a id="saveSVG" href="#">Save Pattern as SVG...</a></li>
-                    <!--<li><a id="saveSVGScreenshot" href="#">Save SVG screenshot</a></li>-->
-                </ul>
-            </li>
-            <li class="dropdown navDropdown">
-                <a href="#" id="exampleMenuButton" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
-                <span class="dropdown-arrow"></span>
-                <ul class="dropdown-menu" style="min-width: 200px;">
-                    <li class="dropdown-submenu">
-                        <a tabindex="-1">Origami<span class="pull-right fui-arrow-right"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" class="demo" data-url="Origami/flappingBird.svg">Flapping Bird</a></li>
-                            <li><a href="#" class="demo author" data-author="randlett" data-url="Origami/randlettflappingbird.svg">Randlett Flapping Bird</a></li>
-                            <li><a href="#" class="demo" data-url="Origami/traditionalCrane.svg">Crane (3D)</a></li>
-                            <li><a href="#" class="demo" data-url="Origami/flat_crane.svg">Crane (flat)</a></li>
-                            <li><a href="#" class="demo author" data-author="hypar" data-url="Origami/hypar.svg">Hypar</a></li>
-                            <li><a href="#" class="demo author" data-author="hypar" data-url="Origami/6ptHypar-anti.svg">Hypar (6 point)</a></li>
-                            <li><a href="#" class="demo" data-url="Origami/singlesquaretwist.svg">Square Twist (single)</a></li>
-                            <li><a href="#" class="demo author" data-author="squareTwist" data-url="Origami/squaretwistManyAngles.svg">Square Twist (many angles)</a></li>
-                            <li><a href="#" class="demo author" data-author="moosersTrain" data-url="Origami/MoosersTrainRigid-Gardner.svg">Mooser's Rigid Train</a></li>
-                            <li><a href="#" class="demo author" data-author="pakin" data-url="Origami/airplane.svg">Paper Airplane</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#" class="demo author" data-author="langTreemaker" data-url="Origami/langCardinal.svg">Lang Cardinal</a></li>
-                            <li><a href="#" class="demo author" data-author="langTreemaker" data-url="Origami/langOrchid.svg">Lang Orchid</a></li>
-                            <li><a href="#" class="demo author" data-author="langTreemaker" data-url="Origami/langKnlDragon.svg">Lang KNL Dragon</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown-submenu">
-                        <a tabindex="-1">Tessellations<span class="pull-right fui-arrow-right"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" class="demo author" data-author="miuraOri" data-url="Tessellations/miura-ori.svg">Miura-Ori</a></li>
-                            <li><a href="#" class="demo author" data-author="miuraOri" data-url="Tessellations/miura_sharpangle.svg">Miura-Ori (sharp angle)</a></li>
-                            <li><a href="#" class="demo" data-url="Tessellations/waterbomb.svg">Waterbomb</a></li>
-                            <li><a href="#" class="demo author" data-author="whirlpool" data-url="Tessellations/whirlpool.svg">Whirlpool Spiral</a></li>
-                            <li><a href="#" class="demo author" data-author="gardner" data-url="Tessellations/FTpoly7.svg">Flower Tower (flat foldable)</a></li>
-                            <li><a href="#" class="demo author" data-author="fellerSmocked" data-url="Tessellations/HexTriFlatFoldableTess.svg">Hex/Tri Tessellation (flat foldable)</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#" class="demo author" data-author="huffmanTessellations" data-url="Tessellations/huffmanExtrudedBoxes.svg">Huffman Extruded Boxes</a></li>
-                            <li><a href="#" class="demo author" data-author="huffmanTessellations" data-url="Tessellations/huffmanWaterbomb.svg">Huffman Waterbombs</a></li>
-                            <li><a href="#" class="demo author" data-author="huffmanTessellations" data-url="Tessellations/huffmanRectangularWeave.svg">Huffman Rect Weave</a></li>
-                            <li><a href="#" class="demo author" data-author="huffmanTessellations" data-url="Tessellations/huffmanStarsTriangles.svg">Huffman Stars-Triangles</a></li>
-                            <li><a href="#" class="demo author" data-author="huffmanTessellations" data-url="Tessellations/huffmanExdentedBoxes.svg">Huffman Exdented Boxes</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#" class="demo author" data-author="langTessellations" data-url="Tessellations/langHoneycomb.svg">Lang Honeycomb Tessellation</a></li>
-                            <li><a href="#" class="demo author" data-author="langTessellations" data-url="Tessellations/langWedgeDoubleFaced.svg">Lang Wedged Double Faced Tessellation</a></li>
-                            <li><a href="#" class="demo author" data-author="langTessellations" data-url="Tessellations/langOvalTessellation.svg">Lang Oval Tessellation</a></li>
-                            <li><a href="#" class="demo author" data-author="langTessellations" data-url="Tessellations/langHyperbolicLimit.svg">Lang Hyperbolic Limit</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#" class="demo author" data-author="reschTessellations" data-url="Tessellations/reschTriTessellation.svg">Resch Triangle Tessellation</a></li>
-                            <li><a href="#" class="demo author" data-author="reschTessellations" data-url="Tessellations/reschBarbell.svg">Resch Barbell Tessellation</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown-submenu">
-                        <a tabindex="-1">Curved Creases<span class="pull-right fui-arrow-right"></span></a>
-                        <ul class="dropdown-menu">
-                            <!-- Using class "cc" causes the example to be loaded with the curved crease checkbox enabled -->
-                            <!-- Some examples already have rulings drawn in and don't need the cc importer -->
-                            <li><a href="#" class="demo author cc" data-author="mitani" data-url="Curved/wavy_pleats.svg">Wavy Pleats</a></li>
-                            <li><a href="#" class="demo author cc" data-author="mitaniCCbook" data-url="Curved/Tri-Wing_Boomerang_Tiling.svg">Boomerang Tessellation</a></li>
-                            <li><a href="#" class="demo author cc" data-author="mitani3Dbook" data-url="Curved/Origami_Sphere_16Flaps.svg">Origami Sphere</a></li>
-                            <li><a href="#" class="demo author cc" data-author="mitani" data-url="Curved/comet.svg">Comet</a></li>
-                            <li><a href="#" class="demo author cc" data-author="mitani" data-url="Curved/scale.svg">Scale Tessellation</a></li>
-                            <li><a href="#" class="demo author cc" data-author="mitaniCCbook" data-url="Curved/Carved_Cylinder.svg">Carved Cylinder</a></li>
-                            <li><a href="#" class="demo author cc" data-author="mitaniCCbook" data-url="Curved/Rotating_Star.svg">Rotating Star</a></li>
-                            <li><a href="#" class="demo author cc" data-author="mitaniCCbook" data-url="Curved/Crossing_curves.svg">Crossing Curves</a></li>
-                            <li><a href="#" class="demo author cc" data-author="mitaniCCbook" data-url="Curved/Treble_Clef.svg">Treble Clef</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#" class="demo author cc" data-author="lukashevaCCbook" data-url="Curved/Leafy_Opus_T-69.svg">Leafy (Opus T-69)</a></li>
-                            <li><a href="#" class="demo author cc" data-author="lukasheva" data-url="Curved/Sweet_Dreams_Opus_T-41.svg">Sweet Dreams (Opus T-41)</a></li>
-                            <li><a href="#" class="demo author cc" data-author="lukasheva" data-url="Curved/Improvisation-62.svg">Improvisation 62</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#" class="demo author" data-author="huffmanCurved" data-url="Curved/huffmanTower.svg">Huffman Tower</a></li>
-                            <li><a href="#" class="demo author cc" data-author="fellerKwan" data-url="Curved/HexSpiralTess.svg">Hex Spiral Tessellation</a></li>
-                            <li><a href="#" class="demo" data-url="Curved/CircularPleat-antiFacet.svg">Circular Pleat</a></li>
-                            <li><a href="#" class="demo author" data-author="sam" data-url="Curved/shell14.svg">14 Panel Shell</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown-submenu">
-                        <a tabindex="-1">Kirigami<span class="pull-right fui-arrow-right"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" class="demo author" data-author="miyamotoHappy" data-url="Kirigami/miyamotoTower.svg">Miyamoto Tower</a></li>
-                            <li><a href="#" class="demo" data-url="Kirigami/honeycombKiri.svg">Kirigami Honeycomb</a></li>
-                            <li><a href="#" class="demo author" data-author="milliron" data-url="Kirigami/auxetic_triangle.svg">Auxetic Triangle Tessellation</a></li>
-                            <li><a href="#" class="demo author" data-author="kreuter" data-url="Kirigami/triPerfTess.svg">Perforated Triangle Tessellation</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown-submenu">
-                        <a tabindex="-1">Popups<span class="pull-right fui-arrow-right"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" class="demo author" data-author="ullagami" data-url="Popup/geometricPopup.svg">Geometric Pattern</a></li>
-                            <li><a href="#" class="demo author" data-author="popupology" data-url="Popup/castlePopup.svg">Castle</a></li>
-                            <li><a href="#" class="demo author" data-author="popupology" data-url="Popup/housePopup.svg">House</a></li>
-                            <!--<li><a href="#" class="demo" data-url="Popup/popupSimple.svg">Simple Square</a></li>-->
-                        </ul>
-                    </li>
-                    <li class="dropdown-submenu">
-                        <a tabindex="-1">Maze Foldings<span class="pull-right fui-arrow-right"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" class="demo author" data-author="squareMaze" data-url="Squaremaze/helloworld.svg">Square Maze "hello world"</a></li>
-                            <li><a href="#" class="demo author" data-author="squareMaze" data-url="Squaremaze/origamisimulator.svg">Square Maze "origami simulator"</a></li>
-                            <li><a href="#" class="demo author" data-author="squareMaze" data-url="Squaremaze/cross.svg">Square Maze "+"</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#" class="demo author" data-author="polygami" data-url="Polygami/polygamiCross.svg">Polygami "+"</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown-submenu">
-                        <a tabindex="-1">Pleating<span class="pull-right fui-arrow-right"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" class="demo author" data-author="konjevod" data-url="Pleating/BoxPleatPyramid.fold">Box Pleat Pyramid</a></li>
-                            <li><a href="#" class="demo author" data-author="konjevod" data-url="Pleating/BoxPleatSpiralPyramid.fold">Box Pleat Spiral Pyramid</a></li>
-                            <li><a href="#" class="demo author" data-author="konjevod" data-url="Pleating/BoxPleatInOutWave.fold">Box Pleat In Out Wave</a></li>
-                            <li><a href="#" class="demo author" data-author="konjevod" data-url="Pleating/BoxPleatSkipOneWave.fold">Box Pleat Skip One Wave</a></li>
-                            <li><a href="#" class="demo author" data-author="konjevod" data-url="Pleating/BoxPleatTessellation.fold">Box Pleat Tessellation</a></li>
-                            <li><a href="#" class="demo author" data-author="konjevod" data-url="Pleating/BoxPleatTessellationLarge.fold">Box Pleat Tessellation (large)</a></li>
-                        </ul>
-                    </li>
-                    <li class="divider"></li>
-                    <li class="dropdown-submenu">
-                        <a tabindex="-1">Origami Bases<span class="pull-right fui-arrow-right"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" class="demo" data-url="Bases/birdBase.svg">Bird Base</a></li>
-                            <li><a href="#" class="demo author" data-author="moveSlowly" data-url="Bases/frogBase.svg">Frog Base</a></li>
-                            <li><a href="#" class="demo" data-url="Bases/boatBase.svg">Boat Base</a></li>
-                            <li><a href="#" class="demo" data-url="Bases/pinwheelBase.svg">Pinwheel Base</a></li>
-                            <li><a href="#" class="demo" data-url="Bases/openSinkBase.svg">Open Sink Base</a></li>
-                            <li><a href="#" class="demo" data-url="Bases/squareBase.svg">Square Base</a></li>
-                            <li><a href="#" class="demo" data-url="Bases/waterbombBase.svg">Waterbomb Base</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown-submenu">
-                        <a tabindex="-1">Simple Folds<span class="pull-right fui-arrow-right"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" class="demo" data-url="SimpleFolds/simpleVertex.svg">Simple Vertex</a></li>
-                            <li><a href="#" class="demo" data-url="SimpleFolds/russianTriangle.svg">Russian Triangle</a></li>
-                            <li><a href="#" class="demo" data-url="SimpleFolds/mapfold.svg">Map Fold</a></li>
-                            <li><a href="#" class="demo" data-url="SimpleFolds/brochurefold.svg">Brochure Fold</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown-submenu">
-                        <a tabindex="-1">Bistable<span class="pull-right fui-arrow-right"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" class="demo author" data-author="bistable" data-url="Bistable/curvedPleatSimple.svg">Curved Pleat</a></li>
-                        </ul>
-                    </li>
-                    <li class="divider"></li>
-                    <li class="dropdown-submenu">
-                        <a tabindex="-1">Problematic Patterns<span class="pull-right fui-arrow-right"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" class="demo author" data-author="skinnyTriangles" data-url="Tessellations/langRattanWeave.svg">Lang Rattan Weave</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li class="dropdown navDropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">View <b class="caret"></b></a>
-                <span class="dropdown-arrow"></span>
-                <ul class="dropdown-menu">
-                    <!--<li><a id="menuVis" href="#">Toggle Menu Visibility</a></li>-->
-                    <li><a id="changeBackground" href="#">Change Background Color...</a></li>
-                    <li class="dropdown-submenu">
-                        <a tabindex="-1">Rotate Model<span class="pull-right fui-arrow-right"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a id="stopRotation" href="#">Stop Rotation</a></li>
-                            <li><a id="rotateX" href="#">Rotate Around X</a></li>
-                            <li><a id="rotateY" href="#">Rotate Around Y</a></li>
-                            <li><a id="rotateZ" href="#">Rotate Around Z</a></li>
-                            <li><a id="changeRotationSpeed" href="#">Change Rotation Speed...</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown-submenu">
-                        <a tabindex="-1">View Direction<span class="pull-right fui-arrow-right"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" id="cameraZ">View Front</a></li>
-                            <li><a href="#" id="cameraMinusZ">View Back</a></li>
-                            <li><a href="#" id="cameraX">View Right</a></li>
-                            <li><a href="#" id="cameraMinusX">View Left</a></li>
-                            <li><a href="#" id="cameraY">View Top</a></li>
-                            <li><a href="#" id="cameraMinusY">View Bottom</a></li>
-                            <li><a href="#" id="cameraIso">View Iso</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li><a id="navPattern" href="#">Pattern</a></li>
-            <li><a id="navSimulation" href="#">Simulation</a></li>
-            <li><a id="about" class="menuHoverControls" target="_blank" href="#">About</a></li>
-			
-        </ul>
-		 <ul class="nav navbar-nav navbar-right">
-			<li><a id="feedback" target="_blank" href="https://forms.gle/3AERmfpp2hhqBxeP6">Feedback</a></li>
-		 </ul>
-        <!--<form class="navbar-form navbar-right" action="#" role="search">-->
-            <!--<div class="form-group">-->
-              <!--<div class="input-group">-->
-                <div class="sliderInput floatRight" id="creasePercentNav">
-                    <span class="label-slider">Fold Percent : </span><div class="flat-slider ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"></div>
-                    <!--<input value="" placeholder="" class="form-control" type="text">-->
+                    <p>
+                        <br />
+                        You can find additional information in <a href="http://erikdemaine.org/papers/OrigamiSimulator_Origami7/" target="_blank">our 7OSME paper</a> and <a href="http://www.amandaghassaei.com/projects/origami_simulator/" target="_blank">project website</a>.
+                        If you have feedback about features you want to see in this app, please see <a href="https://github.com/amandaghassaei/OrigamiSimulator/discussions/41" target="_blank">this thread</a>.
+                        <br />
+                        <br />
+                    </p>
                 </div>
-              <!--</div>-->
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <nav id="globalNav" class="navbar navbar-inverse navbar-embossed" role="navigation">
+        <div class="navbar-header">
+            <a id="logo" class="navbar-brand" target="_blank" href="https://amandaghassaei.com/">
+                <img id="inactiveLogo" src="assets/logo.png" />
+                <img id="activeLogo" src="assets/logo-active.png" />
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-01">
+            <ul class="nav navbar-nav navbar-left">
+                <li class="dropdown navDropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">File <b class="caret"></b></a>
+                    <span class="dropdown-arrow"></span>
+                    <ul class="dropdown-menu">
+                        <li><a class="loadFile" href="#">Import... (SVG / FOLD)</a></li>
+                        <!--<li><a id="importSettings" href="#">SVG Import Settings...</a></li>-->
+                        <li><a id="tips" href="#">Design Tips</a></li>
+                        <li class="divider"></li>
+                        <li><a id="createGif" href="#">Record animated GIF...</a></li>
+                        <li><a id="createVideo" href="#">Record video...</a></li>
+                        <li><a id="createPNG" href="#">Save PNG screenshot...</a></li>
+                        <li class="divider"></li>
+                        <li><a id="exportFOLD" href="#">Save Simulation as FOLD...</a></li>
+                        <li><a id="exportSTL" href="#">Save Simulation as STL...</a></li>
+                        <li><a id="exportOBJ" href="#">Save Simulation as OBJ...</a></li>
+                        <li class="divider"></li>
+                        <li><a id="saveSVG" href="#">Save Pattern as SVG...</a></li>
+                        <!--<li><a id="saveSVGScreenshot" href="#">Save SVG screenshot</a></li>-->
+                    </ul>
+                </li>
+                <li class="dropdown navDropdown">
+                    <a href="#" id="exampleMenuButton" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                    <span class="dropdown-arrow"></span>
+                    <ul class="dropdown-menu" style="min-width: 200px;">
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1">Origami<span class="pull-right fui-arrow-right"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" class="demo" data-url="Origami/flappingBird.svg">Flapping Bird</a></li>
+                                <li><a href="#" class="demo author" data-author="randlett" data-url="Origami/randlettflappingbird.svg">Randlett Flapping Bird</a></li>
+                                <li><a href="#" class="demo" data-url="Origami/traditionalCrane.svg">Crane (3D)</a></li>
+                                <li><a href="#" class="demo" data-url="Origami/flat_crane.svg">Crane (flat)</a></li>
+                                <li><a href="#" class="demo author" data-author="hypar" data-url="Origami/hypar.svg">Hypar</a></li>
+                                <li><a href="#" class="demo author" data-author="hypar" data-url="Origami/6ptHypar-anti.svg">Hypar (6 point)</a></li>
+                                <li><a href="#" class="demo" data-url="Origami/singlesquaretwist.svg">Square Twist (single)</a></li>
+                                <li><a href="#" class="demo author" data-author="squareTwist" data-url="Origami/squaretwistManyAngles.svg">Square Twist (many angles)</a></li>
+                                <li><a href="#" class="demo author" data-author="moosersTrain" data-url="Origami/MoosersTrainRigid-Gardner.svg">Mooser's Rigid Train</a></li>
+                                <li><a href="#" class="demo author" data-author="pakin" data-url="Origami/airplane.svg">Paper Airplane</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#" class="demo author" data-author="langTreemaker" data-url="Origami/langCardinal.svg">Lang Cardinal</a></li>
+                                <li><a href="#" class="demo author" data-author="langTreemaker" data-url="Origami/langOrchid.svg">Lang Orchid</a></li>
+                                <li><a href="#" class="demo author" data-author="langTreemaker" data-url="Origami/langKnlDragon.svg">Lang KNL Dragon</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1">Tessellations<span class="pull-right fui-arrow-right"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" class="demo author" data-author="miuraOri" data-url="Tessellations/miura-ori.svg">Miura-Ori</a></li>
+                                <li><a href="#" class="demo author" data-author="miuraOri" data-url="Tessellations/miura_sharpangle.svg">Miura-Ori (sharp angle)</a></li>
+                                <li><a href="#" class="demo" data-url="Tessellations/waterbomb.svg">Waterbomb</a></li>
+                                <li><a href="#" class="demo author" data-author="whirlpool" data-url="Tessellations/whirlpool.svg">Whirlpool Spiral</a></li>
+                                <li><a href="#" class="demo author" data-author="gardner" data-url="Tessellations/FTpoly7.svg">Flower Tower (flat foldable)</a></li>
+                                <li><a href="#" class="demo author" data-author="fellerSmocked" data-url="Tessellations/HexTriFlatFoldableTess.svg">Hex/Tri Tessellation (flat foldable)</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#" class="demo author" data-author="huffmanTessellations" data-url="Tessellations/huffmanExtrudedBoxes.svg">Huffman Extruded Boxes</a></li>
+                                <li><a href="#" class="demo author" data-author="huffmanTessellations" data-url="Tessellations/huffmanWaterbomb.svg">Huffman Waterbombs</a></li>
+                                <li><a href="#" class="demo author" data-author="huffmanTessellations" data-url="Tessellations/huffmanRectangularWeave.svg">Huffman Rect Weave</a></li>
+                                <li><a href="#" class="demo author" data-author="huffmanTessellations" data-url="Tessellations/huffmanStarsTriangles.svg">Huffman Stars-Triangles</a></li>
+                                <li><a href="#" class="demo author" data-author="huffmanTessellations" data-url="Tessellations/huffmanExdentedBoxes.svg">Huffman Exdented Boxes</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#" class="demo author" data-author="langTessellations" data-url="Tessellations/langHoneycomb.svg">Lang Honeycomb Tessellation</a></li>
+                                <li><a href="#" class="demo author" data-author="langTessellations" data-url="Tessellations/langWedgeDoubleFaced.svg">Lang Wedged Double Faced Tessellation</a></li>
+                                <li><a href="#" class="demo author" data-author="langTessellations" data-url="Tessellations/langOvalTessellation.svg">Lang Oval Tessellation</a></li>
+                                <li><a href="#" class="demo author" data-author="langTessellations" data-url="Tessellations/langHyperbolicLimit.svg">Lang Hyperbolic Limit</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#" class="demo author" data-author="reschTessellations" data-url="Tessellations/reschTriTessellation.svg">Resch Triangle Tessellation</a></li>
+                                <li><a href="#" class="demo author" data-author="reschTessellations" data-url="Tessellations/reschBarbell.svg">Resch Barbell Tessellation</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1">Curved Creases<span class="pull-right fui-arrow-right"></span></a>
+                            <ul class="dropdown-menu">
+                                <!-- Using class "cc" causes the example to be loaded with the curved crease checkbox enabled -->
+                                <!-- Some examples already have rulings drawn in and don't need the cc importer -->
+                                <li><a href="#" class="demo author cc" data-author="mitani" data-url="Curved/wavy_pleats.svg">Wavy Pleats</a></li>
+                                <li><a href="#" class="demo author cc" data-author="mitaniCCbook" data-url="Curved/Tri-Wing_Boomerang_Tiling.svg">Boomerang Tessellation</a></li>
+                                <li><a href="#" class="demo author cc" data-author="mitani3Dbook" data-url="Curved/Origami_Sphere_16Flaps.svg">Origami Sphere</a></li>
+                                <li><a href="#" class="demo author cc" data-author="mitani" data-url="Curved/comet.svg">Comet</a></li>
+                                <li><a href="#" class="demo author cc" data-author="mitani" data-url="Curved/scale.svg">Scale Tessellation</a></li>
+                                <li><a href="#" class="demo author cc" data-author="mitaniCCbook" data-url="Curved/Carved_Cylinder.svg">Carved Cylinder</a></li>
+                                <li><a href="#" class="demo author cc" data-author="mitaniCCbook" data-url="Curved/Rotating_Star.svg">Rotating Star</a></li>
+                                <li><a href="#" class="demo author cc" data-author="mitaniCCbook" data-url="Curved/Crossing_curves.svg">Crossing Curves</a></li>
+                                <li><a href="#" class="demo author cc" data-author="mitaniCCbook" data-url="Curved/Treble_Clef.svg">Treble Clef</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#" class="demo author cc" data-author="lukashevaCCbook" data-url="Curved/Leafy_Opus_T-69.svg">Leafy (Opus T-69)</a></li>
+                                <li><a href="#" class="demo author cc" data-author="lukasheva" data-url="Curved/Sweet_Dreams_Opus_T-41.svg">Sweet Dreams (Opus T-41)</a></li>
+                                <li><a href="#" class="demo author cc" data-author="lukasheva" data-url="Curved/Improvisation-62.svg">Improvisation 62</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#" class="demo author" data-author="huffmanCurved" data-url="Curved/huffmanTower.svg">Huffman Tower</a></li>
+                                <li><a href="#" class="demo author cc" data-author="fellerKwan" data-url="Curved/HexSpiralTess.svg">Hex Spiral Tessellation</a></li>
+                                <li><a href="#" class="demo" data-url="Curved/CircularPleat-antiFacet.svg">Circular Pleat</a></li>
+                                <li><a href="#" class="demo author" data-author="sam" data-url="Curved/shell14.svg">14 Panel Shell</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1">Kirigami<span class="pull-right fui-arrow-right"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" class="demo author" data-author="miyamotoHappy" data-url="Kirigami/miyamotoTower.svg">Miyamoto Tower</a></li>
+                                <li><a href="#" class="demo" data-url="Kirigami/honeycombKiri.svg">Kirigami Honeycomb</a></li>
+                                <li><a href="#" class="demo author" data-author="milliron" data-url="Kirigami/auxetic_triangle.svg">Auxetic Triangle Tessellation</a></li>
+                                <li><a href="#" class="demo author" data-author="kreuter" data-url="Kirigami/triPerfTess.svg">Perforated Triangle Tessellation</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1">Popups<span class="pull-right fui-arrow-right"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" class="demo author" data-author="ullagami" data-url="Popup/geometricPopup.svg">Geometric Pattern</a></li>
+                                <li><a href="#" class="demo author" data-author="popupology" data-url="Popup/castlePopup.svg">Castle</a></li>
+                                <li><a href="#" class="demo author" data-author="popupology" data-url="Popup/housePopup.svg">House</a></li>
+                                <!--<li><a href="#" class="demo" data-url="Popup/popupSimple.svg">Simple Square</a></li>-->
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1">Maze Foldings<span class="pull-right fui-arrow-right"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" class="demo author" data-author="squareMaze" data-url="Squaremaze/helloworld.svg">Square Maze "hello world"</a></li>
+                                <li><a href="#" class="demo author" data-author="squareMaze" data-url="Squaremaze/origamisimulator.svg">Square Maze "origami simulator"</a></li>
+                                <li><a href="#" class="demo author" data-author="squareMaze" data-url="Squaremaze/cross.svg">Square Maze "+"</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#" class="demo author" data-author="polygami" data-url="Polygami/polygamiCross.svg">Polygami "+"</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1">Pleating<span class="pull-right fui-arrow-right"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" class="demo author" data-author="konjevod" data-url="Pleating/BoxPleatPyramid.fold">Box Pleat Pyramid</a></li>
+                                <li><a href="#" class="demo author" data-author="konjevod" data-url="Pleating/BoxPleatSpiralPyramid.fold">Box Pleat Spiral Pyramid</a></li>
+                                <li><a href="#" class="demo author" data-author="konjevod" data-url="Pleating/BoxPleatInOutWave.fold">Box Pleat In Out Wave</a></li>
+                                <li><a href="#" class="demo author" data-author="konjevod" data-url="Pleating/BoxPleatSkipOneWave.fold">Box Pleat Skip One Wave</a></li>
+                                <li><a href="#" class="demo author" data-author="konjevod" data-url="Pleating/BoxPleatTessellation.fold">Box Pleat Tessellation</a></li>
+                                <li><a href="#" class="demo author" data-author="konjevod" data-url="Pleating/BoxPleatTessellationLarge.fold">Box Pleat Tessellation (large)</a></li>
+                            </ul>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1">Origami Bases<span class="pull-right fui-arrow-right"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" class="demo" data-url="Bases/birdBase.svg">Bird Base</a></li>
+                                <li><a href="#" class="demo author" data-author="moveSlowly" data-url="Bases/frogBase.svg">Frog Base</a></li>
+                                <li><a href="#" class="demo" data-url="Bases/boatBase.svg">Boat Base</a></li>
+                                <li><a href="#" class="demo" data-url="Bases/pinwheelBase.svg">Pinwheel Base</a></li>
+                                <li><a href="#" class="demo" data-url="Bases/openSinkBase.svg">Open Sink Base</a></li>
+                                <li><a href="#" class="demo" data-url="Bases/squareBase.svg">Square Base</a></li>
+                                <li><a href="#" class="demo" data-url="Bases/waterbombBase.svg">Waterbomb Base</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1">Simple Folds<span class="pull-right fui-arrow-right"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" class="demo" data-url="SimpleFolds/simpleVertex.svg">Simple Vertex</a></li>
+                                <li><a href="#" class="demo" data-url="SimpleFolds/russianTriangle.svg">Russian Triangle</a></li>
+                                <li><a href="#" class="demo" data-url="SimpleFolds/mapfold.svg">Map Fold</a></li>
+                                <li><a href="#" class="demo" data-url="SimpleFolds/brochurefold.svg">Brochure Fold</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1">Bistable<span class="pull-right fui-arrow-right"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" class="demo author" data-author="bistable" data-url="Bistable/curvedPleatSimple.svg">Curved Pleat</a></li>
+                            </ul>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1">Problematic Patterns<span class="pull-right fui-arrow-right"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" class="demo author" data-author="skinnyTriangles" data-url="Tessellations/langRattanWeave.svg">Lang Rattan Weave</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown navDropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">View <b class="caret"></b></a>
+                    <span class="dropdown-arrow"></span>
+                    <ul class="dropdown-menu">
+                        <!--<li><a id="menuVis" href="#">Toggle Menu Visibility</a></li>-->
+                        <li><a id="changeBackground" href="#">Change Background Color...</a></li>
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1">Rotate Model<span class="pull-right fui-arrow-right"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a id="stopRotation" href="#">Stop Rotation</a></li>
+                                <li><a id="rotateX" href="#">Rotate Around X</a></li>
+                                <li><a id="rotateY" href="#">Rotate Around Y</a></li>
+                                <li><a id="rotateZ" href="#">Rotate Around Z</a></li>
+                                <li><a id="changeRotationSpeed" href="#">Change Rotation Speed...</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1">View Direction<span class="pull-right fui-arrow-right"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" id="cameraZ">View Front</a></li>
+                                <li><a href="#" id="cameraMinusZ">View Back</a></li>
+                                <li><a href="#" id="cameraX">View Right</a></li>
+                                <li><a href="#" id="cameraMinusX">View Left</a></li>
+                                <li><a href="#" id="cameraY">View Top</a></li>
+                                <li><a href="#" id="cameraMinusY">View Bottom</a></li>
+                                <li><a href="#" id="cameraIso">View Iso</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a id="navPattern" href="#">Pattern</a></li>
+                <li><a id="navSimulation" href="#">Simulation</a></li>
+                <li><a id="about" class="menuHoverControls" target="_blank" href="#">About</a></li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a id="feedback" target="_blank" href="https://forms.gle/3AERmfpp2hhqBxeP6">Feedback</a></li>
+            </ul>
+            <!--<form class="navbar-form navbar-right" action="#" role="search">-->
+            <!--<div class="form-group">-->
+            <!--<div class="input-group">-->
+            <div class="sliderInput floatRight" id="creasePercentNav">
+                <span class="label-slider">Fold Percent : </span><div class="flat-slider ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"></div>
+                <!--<input value="" placeholder="" class="form-control" type="text">-->
+            </div>
             <!--</div>-->
-        <!--</form>-->
+            <!--</div>-->
+            <!--</form>-->
 
-    </div><!-- /.navbar-collapse -->
-    <input id="fileSelector" type="file">
+        </div><!-- /.navbar-collapse -->
+        <input id="fileSelector" type="file">
 
-</nav>
+    </nav>
 
-<div  id="threeContainer"></div>
-<canvas id="gpuMathCanvas"></canvas>
-<div id="basicUI">
-    <!--<div class="inlineBlock fullWidth">-->
+    <div id="threeContainer"></div>
+    <canvas id="gpuMathCanvas"></canvas>
+    <div id="basicUI">
+        <!--<div class="inlineBlock fullWidth">-->
         <!--<a class="about" href="#" id="aboutUserInteraction"><span class="fui-question-circle"></span></a>-->
         <!--<label style="margin-right:40px" class="checkbox floatRight" for="userInteractionEnabled">-->
-            <!--<input id="userInteractionEnabled" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>-->
-            <!--Allow User Interaction-->
+        <!--<input id="userInteractionEnabled" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>-->
+        <!--Allow User Interaction-->
         <!--</label>-->
-    <!--</div><br/><br/>-->
-    <a href="#" id="showAdvancedOptions">Show Advanced Options</a><br/><br/>
+        <!--</div><br/><br/>-->
+        <a href="#" id="showAdvancedOptions">Show Advanced Options</a><br /><br />
 
-</div>
+    </div>
 
-<div id="controls">
-    <a href="#" id="hideAdvancedOptions">Hide Advanced Options</a><br/><br/>
-    <div class="sliderInput floatRight" id="creasePercent">
-        <span class="label-slider">Fold Percent : </span><div class="flat-slider ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"></div>
-        <input value="" placeholder="" class="float form-control" type="text">&nbsp;&nbsp;%
-    </div><br/><br/>
-    <!--<b>Simulation Type:</b><br/>-->
-    <!--<div class="indent">-->
+    <div id="controls">
+        <a href="#" id="hideAdvancedOptions">Hide Advanced Options</a><br /><br />
+        <div class="sliderInput floatRight" id="creasePercent">
+            <span class="label-slider">Fold Percent : </span><div class="flat-slider ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"></div>
+            <input value="" placeholder="" class="float form-control" type="text">&nbsp;&nbsp;%
+        </div><br /><br />
+        <!--<b>Simulation Type:</b><br/>-->
+        <!--<div class="indent">-->
         <!--<label class="radio">-->
-            <!--<input name="simType" value="dynamic" data-toggle="radio" class="custom-radio" type="radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>-->
-            <!--Compliant Dynamic Simulation <a class="about floatRight" href="#" id="aboutDynamicSim"><span class="fui-question-circle"></span></a>-->
+        <!--<input name="simType" value="dynamic" data-toggle="radio" class="custom-radio" type="radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>-->
+        <!--Compliant Dynamic Simulation <a class="about floatRight" href="#" id="aboutDynamicSim"><span class="fui-question-circle"></span></a>-->
         <!--</label>-->
         <!--&lt;!&ndash;<label class="radio">&ndash;&gt;-->
-            <!--&lt;!&ndash;<input name="simType" value="static" data-toggle="radio" class="custom-radio" type="radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>&ndash;&gt;-->
-            <!--&lt;!&ndash;Compliant Static Simulation <a class="about floatRight" href="#" id="aboutStaticSim"><span class="fui-question-circle"></span></a>&ndash;&gt;-->
+        <!--&lt;!&ndash;<input name="simType" value="static" data-toggle="radio" class="custom-radio" type="radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>&ndash;&gt;-->
+        <!--&lt;!&ndash;Compliant Static Simulation <a class="about floatRight" href="#" id="aboutStaticSim"><span class="fui-question-circle"></span></a>&ndash;&gt;-->
         <!--&lt;!&ndash;</label>&ndash;&gt;-->
         <!--&lt;!&ndash;<label class="radio">&ndash;&gt;-->
-            <!--&lt;!&ndash;<input name="simType" value="rigid" data-toggle="radio" class="custom-radio" type="radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>&ndash;&gt;-->
-            <!--&lt;!&ndash;Rigid Static Simulation <a class="about floatRight" href="#" id="aboutRigidSim"><span class="fui-question-circle"></span></a>&ndash;&gt;-->
+        <!--&lt;!&ndash;<input name="simType" value="rigid" data-toggle="radio" class="custom-radio" type="radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>&ndash;&gt;-->
+        <!--&lt;!&ndash;Rigid Static Simulation <a class="about floatRight" href="#" id="aboutRigidSim"><span class="fui-question-circle"></span></a>&ndash;&gt;-->
         <!--&lt;!&ndash;</label>&ndash;&gt;-->
-    <!--</div><br/>-->
-    <div class="inlineBlock fullWidth">
-        <a class="about" href="#" id="aboutUserInteraction"><span class="fui-question-circle"></span></a>
-        <label style="margin-right:40px" class="checkbox floatRight" for="userInteractionEnabled">
-            <input id="userInteractionEnabled" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
-            Allow User Interaction
-        </label>
-    </div><br/>
-    <div id="simButtons" class="alignRight">
-        <a href="#" id="start" class="paddingBottom btn btn-lg btn-success">Start Simulation</a>
-        <a href="#" id="pause" class="paddingBottom btn btn-lg btn-warning">Pause Simulation</a>
-        <a href="#" id="reset" class="paddingBottom btn btn-lg btn-default">Reset</a>
-    </div>
-    <div class="fullWidth">
-        <a href="#" class="seeMore closed" data-id="simulationSettings"><span class="fui-triangle-down"></span><b>Simulation Settings:</b></a><a class="about" href="#" id="aboutStiffness"><span class="fui-question-circle"></span></a><br/>
-        <div id="simulationSettings" class="hide">
-            <div class="indent">Numerical Integration:
-            <div class="doubleIndent">
-                <label class="radio">
-                    <input name="integrationType" value="euler" data-toggle="radio" class="custom-radio" type="radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
-                    Euler (first order)
-                </label>
-                <label class="radio">
-                    <input name="integrationType" value="verlet" data-toggle="radio" class="custom-radio" type="radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
-                    Verlet (second order)
-                </label>
-            </div></div><br/>
-            <div class="sliderInput paddingBottom" id="axialStiffness">
-                <span class="label-slider">Axial Stiffness : </span><div class="flat-slider ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"></div>
-                <input value="" placeholder="" class="float form-control" type="text">
-            </div>
-            <div class="sliderInput paddingBottom" id="faceStiffness">
-                <span class="label-slider">Face Stiffness : </span><div class="flat-slider ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"></div>
-                <input value="" placeholder="" class="float form-control" type="text">
-            </div>
-            <div class="sliderInput" id="creaseStiffness">
-                <span class="label-slider">Fold Stiffness : </span><div class="flat-slider ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"></div>
-                <input value="" placeholder="" class="float form-control" type="text">
-            </div>
-            <div class="sliderInput" id="panelStiffness">
-                <span class="label-slider">Facet Crease Stiffness : </span><div class="flat-slider ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"></div>
-                <input value="" placeholder="" class="float form-control" type="text">
-            </div>
-            <div class="sliderInput" id="percentDamping">
-                <span class="label-slider">Damping Ratio : </span><div class="flat-slider ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"></div>
-                <input value="" placeholder="" class="float form-control" type="text">
-            </div>
-        </div><br/>
-    </div>
-    <div class="fullWidth">
-        <a href="#" class="seeMore closed" data-id="animationsSettings"><span class="fui-triangle-down"></span><b>Animation Settings:</b></a><a class="about" href="#" id="aboutAnimation"><span class="fui-question-circle"></span></a><br/>
-        <div id="animationsSettings" class="fullWidth hide">
-            <div class="doubleIndent">
-                <span class="smallTxt">&Delta;t = <span id="deltaT"></span> seconds</span><br/>
-                <span class="smallTxt">Num simulation steps per frame: &nbsp;&nbsp;<input value="" placeholder="" class="numStepsPerRender int form-control" type="text"></span><br/><br/>
-                <div id="stepForwardOptions" class="floatRight">
-                    <a href="#" id="stepForward" class="floatRight btn btn-lg btn-default">Step Forward</a><br/><br/>
-                </div>
-                <div class="fullWidth alignRight">
-                    <a href="#" id="shouldCenterGeo" class="displayBlock btn btn-lg btn-default">Re-center geometry</a>
-                </div>
-            </div>
+        <!--</div><br/>-->
+        <div class="inlineBlock fullWidth">
+            <a class="about" href="#" id="aboutUserInteraction"><span class="fui-question-circle"></span></a>
+            <label style="margin-right:40px" class="checkbox floatRight" for="userInteractionEnabled">
+                <input id="userInteractionEnabled" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+                Allow User Interaction
+            </label>
+        </div><br />
+        <div id="simButtons" class="alignRight">
+            <a href="#" id="start" class="paddingBottom btn btn-lg btn-success">Start Simulation</a>
+            <a href="#" id="pause" class="paddingBottom btn btn-lg btn-warning">Pause Simulation</a>
+            <a href="#" id="reset" class="paddingBottom btn btn-lg btn-default">Reset</a>
         </div>
-    </div><br/>
-
-    <div class="fullWidth">
-        <a href="#" class="seeMore closed" data-id="errorInfo"><span class="fui-triangle-down"></span><b>Error:</b></a><a class="about" href="#" id="aboutError"><span class="fui-question-circle"></span></a><br/>
-        <div id="errorInfo" class="hide smallTxt doubleIndent">
-            <label>Average vertex error: <span id="globalError"></span></label>
-        </div>
-    </div><br/>
-
-    <div class="extraSpace"></div>
-</div>
-<div id="svgViewer"></div>
-<div id="helper">Load more origami patterns here!</div>
-<div id="feedbackNotification"><span>Help Us Improve Origami Simulator</span> <span>&#x279C;</span></div>
-<div id="controlsBottom">
-    <div id="viewToggle" class="bigToggle">
-        <div>
-            <a href="#" id="colorToggle"><div class="active"><img src="assets/hyparColorSmall.png"/><span>Material</span></div></a><div class="separator"></div><a href="#" id="strainToggle"><div><img src="assets/hyparStrainSmall.png"/><span>Strain</span></div></a>
-        </div>
-        View Mode
-    </div>
-    <div id="bottomSliderContainer">
-        <div class="sliderInput" id="creasePercentBottom">
-            <div class="flat-slider ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"></div>
-        </div>
-        <a href="#" id="flatIndicator" class="sliderEndPt smallTxt">
-            <!--<img src="assets/flatcraneSmall.png"/>-->
-            <span class="sliderEndPtLabel">Flat</span>
-            <span class="fui-triangle-down"></span>
-        </a>
-        <a href="#" id="foldedIndicator" class="sliderEndPt smallTxt">
-            <!--<img src="assets/foldedCraneSmall.png"/>-->
-            <span class="sliderEndPtLabel">Folded</span>
-            <span class="fui-triangle-down"></span>
-        </a>
-        <span>Fold Percent: <span id="foldPercentSimple"></span>%</span>
-    </div>
-    <div id="controlsToggle" class="bigToggle">
-        <div>
-            <a href="#" id="orbitToggle"><div class="active"><img class="preserveAspect" src="assets/rotateSmall.png"/><span>Rotate</span></div></a><div class="separator"></div><a href="#" id="grabToggle"><div><img class="preserveAspect" src="assets/grabSmall.png"/><span>Grab</span></div></a>
-        </div>
-        Control Mode
-    </div>
-    <a href="#" id="resetBottom" class="btn btn-lg btn-default">Reset</a>
-</div>
-<div id="controlsLeft" class="flipped">
-    <div>
-        <b>View Settings:</b><br/><br/>
-        <div class="indent">
-            <div>
-                <a href="#" class="seeMore open" data-id="materialSettings"><span class="fui-triangle-down"></span>Mesh Material:</a>
-            </div>
-            <div id="materialSettings" class="inlineBlock indent">
-                <label class="checkbox" for="meshVisible">
-                    <input id="meshVisible" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
-                    Mesh Visible
-                </label>
-                <div id="meshMaterialOptions">
-                    <label class="radio">
-                        <input name="colorMode" value="color" data-toggle="radio" class="custom-radio" type="radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
-                        Colored Material
-                    </label>
-                    <div id="coloredMaterialOptions" class="indent">
-                        <label>Color 1 (rgb hex): &nbsp;&nbsp;</label><input id="color1" value="" placeholder="" class="hexVal form-control" type="text"><br/>
-                        <label>Color 2 (rgb hex): &nbsp;&nbsp;</label><input id="color2" value="" placeholder="" class="hexVal form-control" type="text"><br/>
+        <div class="fullWidth">
+            <a href="#" class="seeMore closed" data-id="simulationSettings"><span class="fui-triangle-down"></span><b>Simulation Settings:</b></a><a class="about" href="#" id="aboutStiffness"><span class="fui-question-circle"></span></a><br />
+            <div id="simulationSettings" class="hide">
+                <div class="indent">
+                    Numerical Integration:
+                    <div class="doubleIndent">
+                        <label class="radio">
+                            <input name="integrationType" value="euler" data-toggle="radio" class="custom-radio" type="radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+                            Euler (first order)
+                        </label>
+                        <label class="radio">
+                            <input name="integrationType" value="verlet" data-toggle="radio" class="custom-radio" type="radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+                            Verlet (second order)
+                        </label>
                     </div>
-                    <label class="radio">
-                        <input name="colorMode" value="axialStrain" data-toggle="radio" class="custom-radio" type="radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
-                        Strain Visualization<a class="about floatRight" href="#" id="aboutAxialStrain"><span class="fui-question-circle"></span></a>
-                    </label>
-                    <div id="axialStrainMaterialOptions" class="indent">
-                        <label>Max Strain: &nbsp;&nbsp;</label>
-                        <input id="strainClip" value="" placeholder="" class="float form-control" type="text"> %<br/>
+                </div><br />
+                <div class="sliderInput paddingBottom" id="axialStiffness">
+                    <span class="label-slider">Axial Stiffness : </span><div class="flat-slider ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"></div>
+                    <input value="" placeholder="" class="float form-control" type="text">
+                </div>
+                <div class="sliderInput paddingBottom" id="faceStiffness">
+                    <span class="label-slider">Face Stiffness : </span><div class="flat-slider ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"></div>
+                    <input value="" placeholder="" class="float form-control" type="text">
+                </div>
+                <div class="sliderInput" id="creaseStiffness">
+                    <span class="label-slider">Fold Stiffness : </span><div class="flat-slider ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"></div>
+                    <input value="" placeholder="" class="float form-control" type="text">
+                </div>
+                <div class="sliderInput" id="panelStiffness">
+                    <span class="label-slider">Facet Crease Stiffness : </span><div class="flat-slider ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"></div>
+                    <input value="" placeholder="" class="float form-control" type="text">
+                </div>
+                <div class="sliderInput" id="percentDamping">
+                    <span class="label-slider">Damping Ratio : </span><div class="flat-slider ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"></div>
+                    <input value="" placeholder="" class="float form-control" type="text">
+                </div>
+            </div><br />
+        </div>
+        <div class="fullWidth">
+            <a href="#" class="seeMore closed" data-id="animationsSettings"><span class="fui-triangle-down"></span><b>Animation Settings:</b></a><a class="about" href="#" id="aboutAnimation"><span class="fui-question-circle"></span></a><br />
+            <div id="animationsSettings" class="fullWidth hide">
+                <div class="doubleIndent">
+                    <span class="smallTxt">&Delta;t = <span id="deltaT"></span> seconds</span><br />
+                    <span class="smallTxt">Num simulation steps per frame: &nbsp;&nbsp;<input value="" placeholder="" class="numStepsPerRender int form-control" type="text"></span><br /><br />
+                    <div id="stepForwardOptions" class="floatRight">
+                        <a href="#" id="stepForward" class="floatRight btn btn-lg btn-default">Step Forward</a><br /><br />
                     </div>
-                    <label class="radio">
-                        <input name="colorMode" value="normal" data-toggle="radio" class="custom-radio" type="radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
-                        Face Normals Material
-                    </label>
+                    <div class="fullWidth alignRight">
+                        <a href="#" id="shouldCenterGeo" class="displayBlock btn btn-lg btn-default">Re-center geometry</a>
+                    </div>
                 </div>
-                <br/>
-            </div><br/>
-            <div>
-                <a href="#" class="seeMore closed" data-id="edgeVisibility"><span class="fui-triangle-down"></span>Edge Visibility</a>:
             </div>
-            <div id="edgeVisibility" class="hide indent">
-                <label class="checkbox" for="edgesVisible">
-                    <input id="edgesVisible" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
-                    Edges Visible
-                </label>
-                <div id="edgeVisOptions" class="indent">
-                    <label class="checkbox" for="mtnsVisible">
-                        <input id="mtnsVisible" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
-                        Mountains <span id="numMtns"></span>
-                    </label>
-                    <label class="checkbox" for="valleysVisible">
-                        <input id="valleysVisible" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
-                        Valleys <span id="numValleys"></span>
-                    </label>
-                    <label class="checkbox" for="panelsVisible">
-                        <input id="panelsVisible" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
-                        Facet Creases <span id="numFacets"></span>
-                    </label>
-                    <label class="checkbox" for="passiveEdgesVisible">
-                        <input id="passiveEdgesVisible" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
-                        Undriven Edges <span id="numPassive"></span>
-                    </label>
-                    <label class="checkbox" for="boundaryEdgesVisible">
-                        <input id="boundaryEdgesVisible" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
-                        Boundary Edges <span id="numBoundary"></span>
-                    </label>
+        </div><br />
 
-                </div>
-                <br/>
+        <div class="fullWidth">
+            <a href="#" class="seeMore closed" data-id="errorInfo"><span class="fui-triangle-down"></span><b>Error:</b></a><a class="about" href="#" id="aboutError"><span class="fui-question-circle"></span></a><br />
+            <div id="errorInfo" class="hide smallTxt doubleIndent">
+                <label>Average vertex error: <span id="globalError"></span></label>
             </div>
-            <br/>
-            <!--Rendering:-->
-            <!--<div class="indent">-->
+        </div><br />
+
+        <div class="extraSpace"></div>
+    </div>
+    <div id="svgViewer"></div>
+    <div id="helper">Load more origami patterns here!</div>
+    <div id="feedbackNotification"><span>Help Us Improve Origami Simulator</span> <span>&#x279C;</span></div>
+    <div id="controlsBottom">
+        <div id="viewToggle" class="bigToggle">
+            <div>
+                <a href="#" id="colorToggle"><div class="active"><img src="assets/hyparColorSmall.png" /><span>Material</span></div></a><div class="separator"></div><a href="#" id="strainToggle"><div><img src="assets/hyparStrainSmall.png" /><span>Strain</span></div></a>
+            </div>
+            View Mode
+        </div>
+        <div id="bottomSliderContainer">
+            <div class="sliderInput" id="creasePercentBottom">
+                <div class="flat-slider ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"></div>
+            </div>
+            <a href="#" id="flatIndicator" class="sliderEndPt smallTxt">
+                <!--<img src="assets/flatcraneSmall.png"/>-->
+                <span class="sliderEndPtLabel">Flat</span>
+                <span class="fui-triangle-down"></span>
+            </a>
+            <a href="#" id="foldedIndicator" class="sliderEndPt smallTxt">
+                <!--<img src="assets/foldedCraneSmall.png"/>-->
+                <span class="sliderEndPtLabel">Folded</span>
+                <span class="fui-triangle-down"></span>
+            </a>
+            <span>Fold Percent: <span id="foldPercentSimple"></span>%</span>
+        </div>
+        <div id="controlsToggle" class="bigToggle">
+            <div>
+                <a href="#" id="orbitToggle"><div class="active"><img class="preserveAspect" src="assets/rotateSmall.png" /><span>Rotate</span></div></a><div class="separator"></div><a href="#" id="grabToggle"><div><img class="preserveAspect" src="assets/grabSmall.png" /><span>Grab</span></div></a>
+            </div>
+            Control Mode
+        </div>
+        <a href="#" id="resetBottom" class="btn btn-lg btn-default">Reset</a>
+    </div>
+    <div id="controlsLeft" class="flipped">
+        <div>
+            <b>View Settings:</b><br /><br />
+            <div class="indent">
+                <div>
+                    <a href="#" class="seeMore open" data-id="materialSettings"><span class="fui-triangle-down"></span>Mesh Material:</a>
+                </div>
+                <div id="materialSettings" class="inlineBlock indent">
+                    <label class="checkbox" for="meshVisible">
+                        <input id="meshVisible" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+                        Mesh Visible
+                    </label>
+                    <div id="meshMaterialOptions">
+                        <label class="radio">
+                            <input name="colorMode" value="color" data-toggle="radio" class="custom-radio" type="radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+                            Colored Material
+                        </label>
+                        <div id="coloredMaterialOptions" class="indent">
+                            <label>Color 1 (rgb hex): &nbsp;&nbsp;</label><input id="color1" value="" placeholder="" class="hexVal form-control" type="text"><br />
+                            <label>Color 2 (rgb hex): &nbsp;&nbsp;</label><input id="color2" value="" placeholder="" class="hexVal form-control" type="text"><br />
+                        </div>
+                        <label class="radio">
+                            <input name="colorMode" value="axialStrain" data-toggle="radio" class="custom-radio" type="radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+                            Strain Visualization<a class="about floatRight" href="#" id="aboutAxialStrain"><span class="fui-question-circle"></span></a>
+                        </label>
+                        <div id="axialStrainMaterialOptions" class="indent">
+                            <label>Max Strain: &nbsp;&nbsp;</label>
+                            <input id="strainClip" value="" placeholder="" class="float form-control" type="text"> %<br />
+                        </div>
+                        <label class="radio">
+                            <input name="colorMode" value="normal" data-toggle="radio" class="custom-radio" type="radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+                            Face Normals Material
+                        </label>
+                    </div>
+                    <br />
+                </div><br />
+                <div>
+                    <a href="#" class="seeMore closed" data-id="edgeVisibility"><span class="fui-triangle-down"></span>Edge Visibility</a>:
+                </div>
+                <div id="edgeVisibility" class="hide indent">
+                    <label class="checkbox" for="edgesVisible">
+                        <input id="edgesVisible" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+                        Edges Visible
+                    </label>
+                    <div id="edgeVisOptions" class="indent">
+                        <label class="checkbox" for="mtnsVisible">
+                            <input id="mtnsVisible" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+                            Mountains <span id="numMtns"></span>
+                        </label>
+                        <label class="checkbox" for="valleysVisible">
+                            <input id="valleysVisible" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+                            Valleys <span id="numValleys"></span>
+                        </label>
+                        <label class="checkbox" for="panelsVisible">
+                            <input id="panelsVisible" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+                            Facet Creases <span id="numFacets"></span>
+                        </label>
+                        <label class="checkbox" for="passiveEdgesVisible">
+                            <input id="passiveEdgesVisible" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+                            Undriven Edges <span id="numPassive"></span>
+                        </label>
+                        <label class="checkbox" for="boundaryEdgesVisible">
+                            <input id="boundaryEdgesVisible" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+                            Boundary Edges <span id="numBoundary"></span>
+                        </label>
+
+                    </div>
+                    <br />
+                </div>
+                <br />
+                <!--Rendering:-->
+                <!--<div class="indent">-->
                 <!--<label class="checkbox" for="ambientOcclusion">-->
-                    <!--<input id="ambientOcclusion" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>-->
-                    <!--Ambient Occlusion-->
+                <!--<input id="ambientOcclusion" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>-->
+                <!--Ambient Occlusion-->
                 <!--</label>-->
-            <!--</div>-->
-            <div>
-                <a href="#" class="seeMore closed" data-id="virtualReality"><span class="fui-triangle-down"></span>Virtual Reality:</a><a class="about floatRight" href="#" id="aboutVR"><span class="fui-question-circle"></span></a>
+                <!--</div>-->
+                <div>
+                    <a href="#" class="seeMore closed" data-id="virtualReality"><span class="fui-triangle-down"></span>Virtual Reality:</a><a class="about floatRight" href="#" id="aboutVR"><span class="fui-question-circle"></span></a>
+                </div>
+                <div id="virtualReality" class="hide indent smallTxt">
+                    <b>Status:</b> &nbsp;<span id="VRstatus"></span>
+                    <div id="VRoptions">
+                        <br />
+                        <a href="#" id="enterVR" class="displayBlock btn btn-lg btn-inverse"></a>
+                    </div><br /><br />
+                </div><br />
+                <div class="extraSpace"></div>
             </div>
-            <div id="virtualReality" class="hide indent smallTxt">
-                <b>Status:</b> &nbsp;<span id="VRstatus"></span>
-                <div id="VRoptions"><br/>
-                    <a href="#" id="enterVR" class="displayBlock btn btn-lg btn-inverse"></a>
-                </div><br/><br/>
-            </div><br/>
-            <div class="extraSpace"></div>
         </div>
     </div>
-</div>
 
-<div class="modal fade" id="tipsModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <p><b>DESIGN TIPS</b><br/><br/>
-                    Bad design files will throw errors and create models that explode or cannot be solved, here are some tips for
-                    importing FOLD or SVG files that work.<br/><br/>
-                    <b>Importing FOLD:</b><br/><br/>
-                    The FOLD file format is specified in <a target="_blank" href="https://github.com/edemaine/fold">these docs</a>.
-                    This tool imports FOLD v1.0 files with <b>all</b> of the following fields populated:
-                    <ul>
-                        <li>vertices_coords</li>
-                        <li>edges_vertices</li>
-                        <li>edges_assignment</li>
-                        <li>faces_vertices</li>
-                    </ul>
-                    You may specify the target fold angle of each crease using the edges_foldAngle field. 
-                    Note that fold angle is a number in degrees lying in the range [−180, 180]. 
-                    The fold angle is positive for valley folds, negative for mountain folds, and zero for flat regions.
-                    Accordingly, the sign of edges_foldAngle should match edges_assignment if both are specified.
-                    You may also assign a null fold angle to a crease so that it is allowed to move freely - this is especially useful when the fold angle is unknown or the crease pattern is fully constrained and able to be driven by other creases in the system.
-                    <br/><br/>
-                    If you are unsure whether your FOLD file is valid, you can inspect it using the
-                    <a target="_blank" href="https://edemaine.github.io/fold/examples/foldviewer.html">FOLD Viewer</a>. 
-                    If you are having trouble, please refer to the <a target=_blank href="https://github.com/edemaine/fold/blob/master/doc/spec.md">FOLD spec</a>.
-                    <br/><br/>
-                    <b>Importing SVG:</b><br/><br/>
-                    <ul>
-                        <li>The SVG importer supports path, line, rect, polygon, and polyline objects with the appropriate
-                            stroke color:</li>
-                        <li>Mountain folds have <b style="color:red">red</b> stroke - rgb(255, 0, 0), hex #ff0000</li>
-                        <li>Valley folds have <b style="color:blue">blue</b> stroke - rgb(0, 0, 255), hex #0000ff</li>
-                        <li>Boundary edges have <b style="color:black">black</b> stroke - rgb(0, 0, 0), hex #000000 - use
-                        this edge type for both the outline of the pattern, and any internal holes.</li>
-                    </ul>
+    <div class="modal fade" id="tipsModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p>
+                        <b>DESIGN TIPS</b><br /><br />
+                        Bad design files will throw errors and create models that explode or cannot be solved, here are some tips for
+                        importing FOLD or SVG files that work.<br /><br />
+                        <b>Importing FOLD:</b><br /><br />
+                        The FOLD file format is specified in <a target="_blank" href="https://github.com/edemaine/fold">these docs</a>.
+                        This tool imports FOLD v1.0 files with <b>all</b> of the following fields populated:
+                        <ul>
+                            <li>vertices_coords</li>
+                            <li>edges_vertices</li>
+                            <li>edges_assignment</li>
+                            <li>faces_vertices</li>
+                        </ul>
+                        You may specify the target fold angle of each crease using the edges_foldAngle field.
+                        Note that fold angle is a number in degrees lying in the range [−180, 180].
+                        The fold angle is positive for valley folds, negative for mountain folds, and zero for flat regions.
+                        Accordingly, the sign of edges_foldAngle should match edges_assignment if both are specified.
+                        You may also assign a null fold angle to a crease so that it is allowed to move freely - this is especially useful when the fold angle is unknown or the crease pattern is fully constrained and able to be driven by other creases in the system.
+                        <br /><br />
+                        If you are unsure whether your FOLD file is valid, you can inspect it using the
+                        <a target="_blank" href="https://edemaine.github.io/fold/examples/foldviewer.html">FOLD Viewer</a>.
+                        If you are having trouble, please refer to the <a target=_blank href="https://github.com/edemaine/fold/blob/master/doc/spec.md">FOLD spec</a>.
+                        <br /><br />
+                        <b>Importing SVG:</b><br /><br />
+                        <ul>
+                            <li>
+                                The SVG importer supports path, line, rect, polygon, and polyline objects with the appropriate
+                                stroke color:
+                            </li>
+                            <li>Mountain folds have <b style="color:red">red</b> stroke - rgb(255, 0, 0), hex #ff0000</li>
+                            <li>Valley folds have <b style="color:blue">blue</b> stroke - rgb(0, 0, 255), hex #0000ff</li>
+                            <li>
+                                Boundary edges have <b style="color:black">black</b> stroke - rgb(0, 0, 0), hex #000000 - use
+                                this edge type for both the outline of the pattern, and any internal holes.
+                            </li>
+                        </ul>
                         <object type="image/svg+xml" data="assets/doc/simplePatterns.svg">
-                          Your browser does not support SVG
+                            Your browser does not support SVG
                         </object>
-                    <ul>
-                        <li>The final fold angle of a mountain or valley fold is set by its opacity. For example, 1.0 = 180&deg;
-                        (fully folded), 0.5 = 90&deg;, 0 = 0&deg; (flat).  Any fold angle between  0&deg; and 180&deg; may be used.  The following
-                            patterns contain creases with varying final fold angles:
-                        </li>
-                    </ul>
+                        <ul>
+                            <li>
+                                The final fold angle of a mountain or valley fold is set by its opacity. For example, 1.0 = 180&deg;
+                                (fully folded), 0.5 = 90&deg;, 0 = 0&deg; (flat).  Any fold angle between  0&deg; and 180&deg; may be used.  The following
+                                patterns contain creases with varying final fold angles:
+                            </li>
+                        </ul>
                         <object type="image/svg+xml" data="assets/doc/opacityExamples.svg">
-                          Your browser does not support SVG
+                            Your browser does not support SVG
                         </object>
-                    <ul>
-                        <li>Before the model can enter the simulator, this tool will automatically triangulate regions in the pattern that form polygons with more than three sides.
-                        To control the triangulations, draw lines in <b style="color:#cccc00">yellow</b> - rgb(255, 255, 0), hex #ffff00.  In general, patterns are more stable when their triangulation is symmetric and minimizes long, skinny triangles.  You can see
-                        how the app automatically triangulated your pattern by enabling "Facet Crease" visibility in the <b>Advanced Options > Edges Visibility</b>
-                            menu on the left side of the screen.  It may not be necessary to add triangulation lines on your pattern.</li>
-                    </ul>
+                        <ul>
+                            <li>
+                                Before the model can enter the simulator, this tool will automatically triangulate regions in the pattern that form polygons with more than three sides.
+                                To control the triangulations, draw lines in <b style="color:#cccc00">yellow</b> - rgb(255, 255, 0), hex #ffff00.  In general, patterns are more stable when their triangulation is symmetric and minimizes long, skinny triangles.  You can see
+                                how the app automatically triangulated your pattern by enabling "Facet Crease" visibility in the <b>Advanced Options > Edges Visibility</b>
+                                menu on the left side of the screen.  It may not be necessary to add triangulation lines on your pattern.
+                            </li>
+                        </ul>
                         <object type="image/svg+xml" data="assets/doc/triangulations.svg">
-                          Your browser does not support SVG
+                            Your browser does not support SVG
                         </object>
-                    <ul>
-                        <li>Facet creases (yellow triangulation lines) are creases that try to remain flat (0&deg; fold angle) as the pattern folds, but some compliance
-                            in the constraints of the simulation will allow them to bend slightly.  Drawing in facet creases allows you to control
-                            the way the model bends in between mountain/valley folds.  This is especially relevant in patterns with curved creases.
-                            If you import an svg with bezier curves and select the checkbox "crease pattern contains curves" in the import dialog, we attempt to triangulate it for you using the algorithm described by <a href="http://www.cgg.cs.tsukuba.ac.jp/projects/2020/RulingAwareTriangulation/index.html" target="_blank">Simple Simulation of Curved Folds Based on Ruling-aware Triangulation</a>.
-                            We recommend trying this first, and add additional facet creases to your svg design where needed.
-                        </li>
-                    </ul>
+                        <ul>
+                            <li>
+                                Facet creases (yellow triangulation lines) are creases that try to remain flat (0&deg; fold angle) as the pattern folds, but some compliance
+                                in the constraints of the simulation will allow them to bend slightly.  Drawing in facet creases allows you to control
+                                the way the model bends in between mountain/valley folds.  This is especially relevant in patterns with curved creases.
+                                If you import an svg with bezier curves and select the checkbox "crease pattern contains curves" in the import dialog, we attempt to triangulate it for you using the algorithm described by <a href="http://www.cgg.cs.tsukuba.ac.jp/projects/2020/RulingAwareTriangulation/index.html" target="_blank">Simple Simulation of Curved Folds Based on Ruling-aware Triangulation</a>.
+                                We recommend trying this first, and add additional facet creases to your svg design where needed.
+                            </li>
+                        </ul>
                         <object type="image/svg+xml" data="assets/doc/triangulationsCurved.svg">
-                          Your browser does not support SVG
+                            Your browser does not support SVG
                         </object>
-                    <ul>
-                        <li>Cuts have <b style="color:#00ff00">green</b> stroke - rgb(0, 255, 0), hex #00ff00 - use this edge type
-                        to form thin slits in the pattern.</li>
-                    </ul>
+                        <ul>
+                            <li>
+                                Cuts have <b style="color:#00ff00">green</b> stroke - rgb(0, 255, 0), hex #00ff00 - use this edge type
+                                to form thin slits in the pattern.
+                            </li>
+                        </ul>
                         <object type="image/svg+xml" data="assets/doc/cuts.svg">
-                          Your browser does not support SVG
+                            Your browser does not support SVG
                         </object>
-                    <ul>
-                        <li>Undriven creases have <b style="color:magenta">magenta</b> stroke - rgb(255, 0, 255), hex #ff00ff -
-                        creases of this type will swing freely.  Use this crease type when you're not sure what angle some of the
-                        creases in your pattern should fold to.</li>
-                    </ul>
+                        <ul>
+                            <li>
+                                Undriven creases have <b style="color:magenta">magenta</b> stroke - rgb(255, 0, 255), hex #ff00ff -
+                                creases of this type will swing freely.  Use this crease type when you're not sure what angle some of the
+                                creases in your pattern should fold to.
+                            </li>
+                        </ul>
                         <object type="image/svg+xml" data="assets/doc/hinges.svg">
-                          Your browser does not support SVG
+                            Your browser does not support SVG
                         </object>
-                    <ul>
-                        <li>Line style and stroke width do not matter.</li>
-                        <li>Remove clipping masks from your file before importing.</li>
-                        <li>This tool should be able to automatically clean files of slightly misaligned vertices, stray vertices,
-                        duplicate lines, and extra vertices falling in the middle of an edge,
-                        but it is recommended to remove these errors yourself in order to avoid problems.</li>
-                        <li>If your simulation is not working, check that the imported pattern looks correct by clicking on the <b>Pattern</b> view in the top nav bar.
-                        You can also download a copy of the imported pattern ( <b>File > Save Pattern as SVG</b> ) and view it in a vector
-                        editing program of your choice.</li>
-                    </ul><br/>
+                        <ul>
+                            <li>Line style and stroke width do not matter.</li>
+                            <li>Remove clipping masks from your file before importing.</li>
+                            <li>
+                                This tool should be able to automatically clean files of slightly misaligned vertices, stray vertices,
+                                duplicate lines, and extra vertices falling in the middle of an edge,
+                                but it is recommended to remove these errors yourself in order to avoid problems.
+                            </li>
+                            <li>
+                                If your simulation is not working, check that the imported pattern looks correct by clicking on the <b>Pattern</b> view in the top nav bar.
+                                You can also download a copy of the imported pattern ( <b>File > Save Pattern as SVG</b> ) and view it in a vector
+                                editing program of your choice.
+                            </li>
+                        </ul><br />
 
-                <b>For Adobe Illustrator users:</b><br/><br/>
-                I use Illustrator to create SVGs (though any vector editing program should be fine).  Here are some tips I've found for making svgs to import into this tool.<br/><br/>
-                    <ul>
-                        <li>If you are starting with a pre-made vector file, first release all clipping masks (<b>Select all + Object > Clipping Mask > Release</b>).</li>
-                        <li>Create geometry using the <b>Line Segment</b>, <b>Rectangle</b>,  and <b>Polygon</b> tools.</li>
-                        <li>Illustrator can help you select all lines of a particular type so that you can edit their color or opacity together.  Click the line,
-                        then go to <b>Select > Same > Appearance</b> to select all similar lines in the pattern.
-                        <li>Be sure that <b>CSS Properties</b> is set to <b>Presentation Attributes</b> in the Advanced options.
-                        <li>Finally hit <b>Save As</b> and select <b>.svg</b> extension. I'm using the default SVG 1.1 settings, but version 1.0 will work as well.</li>
-                    </ul>
-                <img style="width:100%" src="assets/doc/illustratorSaveOptions.jpg"/>
-                </p>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<div class="modal fade" id="aboutVRmodal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <p><b>VIRTUAL REALITY</b><br/><br/>
-                This tool currently supports an interactive Virtual Reality mode for the Vive and Oculus headset and controllers (it may work on others, but it is not tested).
-                For this to work, you must first use a <a href="https://webvr.info/" target="_blank">WebVR enabled browser</a>:
-                currently only <a href="https://webvr.info/get-chrome/" target="_blank">an experimental build of Chromium</a> (with enable-webvr and
+                        <b>For Adobe Illustrator users:</b><br /><br />
+                        I use Illustrator to create SVGs (though any vector editing program should be fine).  Here are some tips I've found for making svgs to import into this tool.<br /><br />
+                        <ul>
+                            <li>If you are starting with a pre-made vector file, first release all clipping masks (<b>Select all + Object > Clipping Mask > Release</b>).</li>
+                            <li>Create geometry using the <b>Line Segment</b>, <b>Rectangle</b>,  and <b>Polygon</b> tools.</li>
+                            <li>
+                                Illustrator can help you select all lines of a particular type so that you can edit their color or opacity together.  Click the line,
+                                then go to <b>Select > Same > Appearance</b> to select all similar lines in the pattern.
+                            <li>Be sure that <b>CSS Properties</b> is set to <b>Presentation Attributes</b> in the Advanced options.
+                            <li>Finally hit <b>Save As</b> and select <b>.svg</b> extension. I'm using the default SVG 1.1 settings, but version 1.0 will work as well.</li>
+                        </ul>
+                        <img style="width:100%" src="assets/doc/illustratorSaveOptions.jpg" />
+                    </p>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div class="modal fade" id="aboutVRmodal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p>
+                        <b>VIRTUAL REALITY</b><br /><br />
+                        This tool currently supports an interactive Virtual Reality mode for the Vive and Oculus headset and controllers (it may work on others, but it is not tested).
+                        For this to work, you must first use a <a href="https://webvr.info/" target="_blank">WebVR enabled browser</a>:
+                        currently only <a href="https://webvr.info/get-chrome/" target="_blank">an experimental build of Chromium</a> (with enable-webvr and
                         -enable-gamepad-extensions flags) and <a href="https://webvr.rocks/firefox" target="_blank">the latest Firefox for Windows </a>
-                      are supported by this app.
-                <br/><br/>
-                    When you open this page with the appropriate browser, you will see a button that says "<b>ENTER VR</b>".  Clicking this will
-                put the app into an interactive VR mode.  The hand controllers will allow you to grab the origami mesh and pull on it.
-                This is especially interesting if you set the <b>Mesh Material</b> to <b>Strain Visualization</b> so you can see how your interactions
-                change the internal strains in the material.
-                <br/><br/>
-                    <b>Troubleshooting</b>:<br/>
-                <ul>
-                    <li>If the simulation looks choppy, consider lowering the <b>Animation Settings > Num Steps Per Frame</b> setting.</li>
-                    <li>The origami should load up in the center of your playspace.  If things load way off in the distance, you may need to reboot your headset and controllers and refresh this app.  I do this through SteamVR.</li>
-                    <li>If you hand controllers are not appearing, try clicking the System Button (Vive) to get them to wake up.  If you still have trouble connecting, try refreshing this app.</li>
-                    <li>WebVR is changing rapidly, if you cannot connect be sure you have the latest browser version and install any firmware updates on your headset, controllers, and sensors.</li>
-            </ul>
-                </p>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<div class="modal fade" id="aboutAnimationModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <p><b>ANIMATION SETTINGS</b><br/><br/>
-                The dynamic simulation is calculated by solving for all the forces in the system, moving time forward in small <b>&Delta;t</b> steps,
-                and updating the vertices of the origami incrementally.  The time step size for this animation is calculated automatically
-                based on the material stiffnesses set in the <b>Simulation Settings</b> section: more stiff settings
-                require shorter time steps to solve and will slow down the simulation.<br/>
-                <br/>
-                <b>Num simulation steps per frame</b> allows you to control the number of tiny time steps forward to take on each
-                render cycle.  If the simulation looks choppy to you, you might consider lowering this setting.
-                Lowering the number of steps per frame will slow down the simulation, but will result in a more smooth animation.
-                </p>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<div class="modal fade" id="exportSTLModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-med">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <b>EXPORT STL</b><br/><br/>
-                Filename: &nbsp;&nbsp;<input id="stlFilename" value="" placeholder="" class="bigInput text form-control" type="text"> .stl<br/><br/>
-                Scale: &nbsp;&nbsp;<input value="" placeholder="" class="float exportScale form-control" type="text"><br/><br/>
-                Dimensions: &nbsp;&nbsp;<b><span class="exportDimensions"></span></b><br/>
-                <span class="smallTxt">( the STL file format is unitless, but typically assumed to be either in inches or mm )</span><br/>
-                <label class="bigLabel checkbox" for="doublesidedSTL">
-                    <input id="doublesidedSTL" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
-                    Double Sided
-                </label>
-            </div>
-            <div class="modal-footer">
-                <button id="doSTLsave" type="button" class="actionButton btn btn-success" data-dismiss="modal">Save</button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<div class="modal fade" id="exportOBJModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-med">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <b>EXPORT OBJ</b><br/><br/>
-                <span class="smallTxt">These OBJs are compatible with Freeform Origami</span><br/>
-                Filename: &nbsp;&nbsp;<input id="objFilename" value="" placeholder="" class="bigInput text form-control" type="text"> .obj<br/><br/>
-                Scale: &nbsp;&nbsp;<input value="" placeholder="" class="float exportScale form-control" type="text"><br/><br/>
-                Dimensions: &nbsp;&nbsp;<b><span class="exportDimensions"></span></b><br/>
-                <span class="smallTxt">( the OBJ file format is unitless, but typically assumed to be either in inches or mm )</span><br/>
-                <!--<label class="bigLabel checkbox" for="doublesidedOBJ">-->
+                        are supported by this app.
+                        <br /><br />
+                        When you open this page with the appropriate browser, you will see a button that says "<b>ENTER VR</b>".  Clicking this will
+                        put the app into an interactive VR mode.  The hand controllers will allow you to grab the origami mesh and pull on it.
+                        This is especially interesting if you set the <b>Mesh Material</b> to <b>Strain Visualization</b> so you can see how your interactions
+                        change the internal strains in the material.
+                        <br /><br />
+                        <b>Troubleshooting</b>:<br />
+                        <ul>
+                            <li>If the simulation looks choppy, consider lowering the <b>Animation Settings > Num Steps Per Frame</b> setting.</li>
+                            <li>The origami should load up in the center of your playspace.  If things load way off in the distance, you may need to reboot your headset and controllers and refresh this app.  I do this through SteamVR.</li>
+                            <li>If you hand controllers are not appearing, try clicking the System Button (Vive) to get them to wake up.  If you still have trouble connecting, try refreshing this app.</li>
+                            <li>WebVR is changing rapidly, if you cannot connect be sure you have the latest browser version and install any firmware updates on your headset, controllers, and sensors.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div class="modal fade" id="aboutAnimationModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p>
+                        <b>ANIMATION SETTINGS</b><br /><br />
+                        The dynamic simulation is calculated by solving for all the forces in the system, moving time forward in small <b>&Delta;t</b> steps,
+                        and updating the vertices of the origami incrementally.  The time step size for this animation is calculated automatically
+                        based on the material stiffnesses set in the <b>Simulation Settings</b> section: more stiff settings
+                        require shorter time steps to solve and will slow down the simulation.<br />
+                        <br />
+                        <b>Num simulation steps per frame</b> allows you to control the number of tiny time steps forward to take on each
+                        render cycle.  If the simulation looks choppy to you, you might consider lowering this setting.
+                        Lowering the number of steps per frame will slow down the simulation, but will result in a more smooth animation.
+                    </p>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div class="modal fade" id="exportSTLModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-med">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <b>EXPORT STL</b><br /><br />
+                    Filename: &nbsp;&nbsp;<input id="stlFilename" value="" placeholder="" class="bigInput text form-control" type="text"> .stl<br /><br />
+                    Scale: &nbsp;&nbsp;<input value="" placeholder="" class="float exportScale form-control" type="text"><br /><br />
+                    Dimensions: &nbsp;&nbsp;<b><span class="exportDimensions"></span></b><br />
+                    <span class="smallTxt">( the STL file format is unitless, but typically assumed to be either in inches or mm )</span><br />
+                    <label class="bigLabel checkbox" for="doublesidedSTL">
+                        <input id="doublesidedSTL" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+                        Double Sided
+                    </label>
+                </div>
+                <div class="modal-footer">
+                    <button id="doSTLsave" type="button" class="actionButton btn btn-success" data-dismiss="modal">Save</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div class="modal fade" id="exportOBJModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-med">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <b>EXPORT OBJ</b><br /><br />
+                    <span class="smallTxt">These OBJs are compatible with Freeform Origami</span><br />
+                    Filename: &nbsp;&nbsp;<input id="objFilename" value="" placeholder="" class="bigInput text form-control" type="text"> .obj<br /><br />
+                    Scale: &nbsp;&nbsp;<input value="" placeholder="" class="float exportScale form-control" type="text"><br /><br />
+                    Dimensions: &nbsp;&nbsp;<b><span class="exportDimensions"></span></b><br />
+                    <span class="smallTxt">( the OBJ file format is unitless, but typically assumed to be either in inches or mm )</span><br />
+                    <!--<label class="bigLabel checkbox" for="doublesidedOBJ">-->
                     <!--<input id="polyFacesOBJ" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>-->
                     <!--Allow polygonal faces-->
-                <!--</label>-->
-                <label class="bigLabel checkbox" for="doublesidedOBJ">
-                    <input id="doublesidedOBJ" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
-                    Double Sided
-                </label>
-            </div>
-            <div class="modal-footer">
-                <button id="doOBJsave" type="button" class="actionButton btn btn-success" data-dismiss="modal">Save</button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<div class="modal fade" id="exportFOLDModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-med">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <b>EXPORT FOLD</b><br/><br/>
-                Filename: &nbsp;&nbsp;<input id="foldFilename" value="" placeholder="" class="bigInput text form-control" type="text"> .fold<br/><br/>
-                Author: &nbsp;&nbsp;<input id="foldAuthor" value="" placeholder="" class="bigInput text form-control" type="text"><br/><br/>
-                Scale: &nbsp;&nbsp;<input value="" placeholder="" class="float exportScale form-control" type="text">&nbsp;&nbsp;&nbsp;&nbsp;
-                Units: &nbsp;&nbsp;
-                <div class="btn-group">
-                    <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button"><span class="unitsDisplay"></span> <span class="caret"></span></button>
-                    <ul id="unitsDropdown" role="menu" class="dropdown-menu">
-                        <li><a class="units" data-id="unit" href="#">unitless</a></li>
-                        <li><a class="units" data-id="in" href="#">in</a></li>
-                        <li><a class="units" data-id="pt" href="#">pt</a></li>
-                        <li><a class="units" data-id="m" href="#">m</a></li>
-                        <li><a class="units" data-id="cm" href="#">cm</a></li>
-                        <li><a class="units" data-id="mm" href="#">mm</a></li>
-                        <li><a class="units" data-id="um" href="#">um</a></li>
-                        <li><a class="units" data-id="nm" href="#">nm</a></li>
-                    </ul>
+                    <!--</label>-->
+                    <label class="bigLabel checkbox" for="doublesidedOBJ">
+                        <input id="doublesidedOBJ" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+                        Double Sided
+                    </label>
                 </div>
-                <br/><br/>
-                Dimensions: &nbsp;&nbsp;<b><span class="exportDimensions"></span> <span class="unitsDisplay"></span></b><br/>
-                <label class="bigLabel checkbox" for="triangulateFOLDexport">
-                    <input id="triangulateFOLDexport" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
-                    Save with triangulated faces
-                </label>
-                <label class="bigLabel checkbox" for="exportFoldAngle">
-                    <input id="exportFoldAngle" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
-                    Save target angles in edges_foldAngle
-                </label>
-                <span class="smallTxt">For more information about the FOLD file format, see the <a target="_blank" href="https://github.com/edemaine/fold">offical docs</a>.
-                Use the <a href="https://edemaine.github.io/fold/examples/foldviewer.html" target="_blank">FOLD viewer</a> to check that your file has been exported correctly.</span>
-            </div>
-            <div class="modal-footer">
-                <button id="doFOLDsave" type="button" class="actionButton btn btn-success" data-dismiss="modal">Save</button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<div class="modal fade" id="importFoldModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-med">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <b>IMPORT FOLD</b><br/><br/>
-                <label class="bigLabel checkbox" for="foldUseAngles">
-                    <input id="foldUseAngles" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
-                    Use current angles as target fold angles
-                </label>
-            </div>
-            <div class="modal-footer">
-                <button data-dismiss="modal" type="button" class="btn btn-success">OK</button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<div class="modal fade" id="warningModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog sm">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <p id="warningMessage"></p>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<div class="modal fade" id="aboutErrorModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <p><b>SIMULATION ERROR</b><br/><br/>
-                    <b>Average vertex error</b> gives a sense of how much the distance constraints in the
-                    origami pattern are being violated (i.e. how much the sheet is being stretched).  The error at each vertex is evaluated by averaging the
-                    percent deviation of all its distance constraints with adjacent vertices.  This error is
-                    reported as a percent of the total length of the distance constraint to remove scaling effects.
-                    <br/><br/>
-                    This measurement is equivalent to <a href="https://en.wikipedia.org/wiki/Deformation_(mechanics)#Engineering_strain" target="_blank">
-                        Cauchy strain or engineering strain</a> of the distance constraints on this system.
-                    Increasing the <b>Axial Stiffness</b> will tighten these constraints and
-                    lower the error in the simulation.<br/>
-                    <br/>
-                    To visualize the error of each vertex graphically, select <b>Strain Visualization</b> under <b>Mesh Material</b>
-                     in the left menu.
-                </p>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<div class="modal fade" id="aboutStiffnessModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <p><b>SIMULATION SETTINGS</b><br/><br/>
-                    This app uses a compliant dynamic simulation method to solve for the geometry of an origami pattern
-                    at a given fold angle.  The simulation sets up several types of constraints: distance constraints prevent the
-                    sheet from stretching or compressing, face constraints prevent the sheet from <a href="https://en.wikipedia.org/wiki/Shear_stress" target="_blank">shearing</a>, and angular constraints fold or flatten the sheet.  Each of these constraints is weighted by a stiffness - the stiffer the constraint, the better it is enforced
-                    in the simulation.  <br/>
-                    <br/>
-                    <b>Axial Stiffness</b> is the stiffness of the distance constraints.  Increasing axial
-                    stiffness will decrease the stretching/compression (strain) in the simulation, but it will also slow down the solver.
-                    <b>Face Stiffness</b> is the stiffness of the face constraints, which help the axial constraints prevent deformation of the sheet's surface between the creases.<br/>
-                    <br/>
-                    Fold and facet stiffnesses correspond to two types of angular constraints.  <b>Fold Stiffness</b> is the stiffness of the mountain
-                    and valley creases in the origami pattern.  <b>Facet Stiffness</b> is the stiffness of the triangulated faces between
-                    creases in the pattern.  Increasing facet stiffness causes the faces between creases to stay very flat as the origami is folded.
-                    As facet stiffness becomes very high, this simulation approaches a <a href="http://www.tsg.ne.jp/TT/cg/TachiFreeformOrigami2010.pdf" target="_blank">
-                        rigid origami simulation</a>, and models the behavior of a rigid material (such as metal) when folded.<br/>
-                    <br/>
-                    Internally, constraint stiffnesses are scaled by the length of the edge associated with that constraint to determine its <i>geometric stiffness</i>.  For Axial constaints, stiffness is
-                    divided by length and for angular constraints, stiffness is multiplied by length.<br/>
-                    <br/>
-                    Since this is a dynamic simulation, vertices of the origami move with some notion of acceleration and velocity.  In order to
-                    keep the system stable and help it converge to a static solution, <a target="_blank" href="https://en.wikipedia.org/wiki/Harmonic_oscillator#Damped_harmonic_oscillator">
-                        damping</a> is applied to slow the motion of the vertices.  The <b>Damping</b> slider allows you to control the amount of damping
-                    present in the simulation.  Decreasing damping makes the simulation more "springy".
-                    It may be useful to temporarily turn down damping to help the simulation more quickly converge towards its static solution - especially
-                    for patterns that take a long time to curl.<br/>
-                    <br/>
-                    A <b>Numerical Integration</b> technique is used to integrate acceleration into velocity and position for each time step of the simulation.
-                    Different integration techniques have different associated computational cost, error, and stability.  This app allows you to choose
-                    between two different integration techniques: <a href="https://en.wikipedia.org/wiki/Euler_method" target="_blank">Euler Integration</a>
-                    is the simplest type of numerical integration (first order) with large associated error, and
-                    <a href="https://en.wikipedia.org/wiki/Verlet_integration" target="_blank">Verlet Integration</a> is a second order integration technique
-                    with lower error and better stability than Euler.
-                </p>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<div class="modal fade" id="aboutDynamicSimModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-med">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <p><b>COMPLIANT DYNAMIC SIMULATION</b><br/><br/>
-                    ....
-                </p>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<div class="modal fade" id="aboutStaticSimModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-med">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <p><b>COMPLIANT STATIC SIMULATION</b><br/><br/>
-                    ....
-                </p>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<div class="modal fade" id="aboutRigidSimModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-med">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <p><b>RIGID STATIC SIMULATION</b><br/><br/>
-                    ....
-                </p>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<div class="modal fade" id="aboutAxialStrainModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                    <p><b>STRAIN VISUALIZATION</b><br/><br/>
-                    <a href="https://en.wikipedia.org/wiki/Deformation_(mechanics)#Engineering_strain" target="_blank">
-                        Cauchy strain or engineering strain</a> is a unitless measurement of how much a material is being stretched or compressed under load.
-                    The <b>Strain Visualization</b> illustrates the strain across an origami sheet by mapping it to a color from blue (no strain) to red (max strain).<br/><br/>
-                    <img style="width: 100%;" src="assets/doc/strain.jpg" />
-                </p>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<div class="modal fade" id="aboutUserInteractionModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                    <p><b>USER INTERACTION</b><br/><br/>
-                    Toggle this control to enable/disable mouse interaction with the origami model.  When enabled,
+                <div class="modal-footer">
+                    <button id="doOBJsave" type="button" class="actionButton btn btn-success" data-dismiss="modal">Save</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div class="modal fade" id="exportFOLDModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-med">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <b>EXPORT FOLD</b><br /><br />
+                    Filename: &nbsp;&nbsp;<input id="foldFilename" value="" placeholder="" class="bigInput text form-control" type="text"> .fold<br /><br />
+                    Author: &nbsp;&nbsp;<input id="foldAuthor" value="" placeholder="" class="bigInput text form-control" type="text"><br /><br />
+                    Scale: &nbsp;&nbsp;<input value="" placeholder="" class="float exportScale form-control" type="text">&nbsp;&nbsp;&nbsp;&nbsp;
+                    Units: &nbsp;&nbsp;
+                    <div class="btn-group">
+                        <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button"><span class="unitsDisplay"></span> <span class="caret"></span></button>
+                        <ul id="unitsDropdown" role="menu" class="dropdown-menu">
+                            <li><a class="units" data-id="unit" href="#">unitless</a></li>
+                            <li><a class="units" data-id="in" href="#">in</a></li>
+                            <li><a class="units" data-id="pt" href="#">pt</a></li>
+                            <li><a class="units" data-id="m" href="#">m</a></li>
+                            <li><a class="units" data-id="cm" href="#">cm</a></li>
+                            <li><a class="units" data-id="mm" href="#">mm</a></li>
+                            <li><a class="units" data-id="um" href="#">um</a></li>
+                            <li><a class="units" data-id="nm" href="#">nm</a></li>
+                        </ul>
+                    </div>
+                    <br /><br />
+                    Dimensions: &nbsp;&nbsp;<b><span class="exportDimensions"></span> <span class="unitsDisplay"></span></b><br />
+                    <label class="bigLabel checkbox" for="triangulateFOLDexport">
+                        <input id="triangulateFOLDexport" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+                        Save with triangulated faces
+                    </label>
+                    <label class="bigLabel checkbox" for="exportFoldAngle">
+                        <input id="exportFoldAngle" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+                        Save target angles in edges_foldAngle
+                    </label>
+                    <span class="smallTxt">
+                        For more information about the FOLD file format, see the <a target="_blank" href="https://github.com/edemaine/fold">offical docs</a>.
+                        Use the <a href="https://edemaine.github.io/fold/examples/foldviewer.html" target="_blank">FOLD viewer</a> to check that your file has been exported correctly.
+                    </span>
+                </div>
+                <div class="modal-footer">
+                    <button id="doFOLDsave" type="button" class="actionButton btn btn-success" data-dismiss="modal">Save</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div class="modal fade" id="importFoldModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-med">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <b>IMPORT FOLD</b><br /><br />
+                    <label class="bigLabel checkbox" for="foldUseAngles">
+                        <input id="foldUseAngles" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+                        Use current angles as target fold angles
+                    </label>
+                </div>
+                <div class="modal-footer">
+                    <button data-dismiss="modal" type="button" class="btn btn-success">OK</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div class="modal fade" id="warningModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog sm">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p id="warningMessage"></p>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div class="modal fade" id="aboutErrorModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p>
+                        <b>SIMULATION ERROR</b><br /><br />
+                        <b>Average vertex error</b> gives a sense of how much the distance constraints in the
+                        origami pattern are being violated (i.e. how much the sheet is being stretched).  The error at each vertex is evaluated by averaging the
+                        percent deviation of all its distance constraints with adjacent vertices.  This error is
+                        reported as a percent of the total length of the distance constraint to remove scaling effects.
+                        <br /><br />
+                        This measurement is equivalent to <a href="https://en.wikipedia.org/wiki/Deformation_(mechanics)#Engineering_strain" target="_blank">
+                            Cauchy strain or engineering strain
+                        </a> of the distance constraints on this system.
+                        Increasing the <b>Axial Stiffness</b> will tighten these constraints and
+                        lower the error in the simulation.<br />
+                        <br />
+                        To visualize the error of each vertex graphically, select <b>Strain Visualization</b> under <b>Mesh Material</b>
+                        in the left menu.
+                    </p>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div class="modal fade" id="aboutStiffnessModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p>
+                        <b>SIMULATION SETTINGS</b><br /><br />
+                        This app uses a compliant dynamic simulation method to solve for the geometry of an origami pattern
+                        at a given fold angle.  The simulation sets up several types of constraints: distance constraints prevent the
+                        sheet from stretching or compressing, face constraints prevent the sheet from <a href="https://en.wikipedia.org/wiki/Shear_stress" target="_blank">shearing</a>, and angular constraints fold or flatten the sheet.  Each of these constraints is weighted by a stiffness - the stiffer the constraint, the better it is enforced
+                        in the simulation.  <br />
+                        <br />
+                        <b>Axial Stiffness</b> is the stiffness of the distance constraints.  Increasing axial
+                        stiffness will decrease the stretching/compression (strain) in the simulation, but it will also slow down the solver.
+                        <b>Face Stiffness</b> is the stiffness of the face constraints, which help the axial constraints prevent deformation of the sheet's surface between the creases.<br />
+                        <br />
+                        Fold and facet stiffnesses correspond to two types of angular constraints.  <b>Fold Stiffness</b> is the stiffness of the mountain
+                        and valley creases in the origami pattern.  <b>Facet Stiffness</b> is the stiffness of the triangulated faces between
+                        creases in the pattern.  Increasing facet stiffness causes the faces between creases to stay very flat as the origami is folded.
+                        As facet stiffness becomes very high, this simulation approaches a <a href="http://www.tsg.ne.jp/TT/cg/TachiFreeformOrigami2010.pdf" target="_blank">
+                            rigid origami simulation
+                        </a>, and models the behavior of a rigid material (such as metal) when folded.<br />
+                        <br />
+                        Internally, constraint stiffnesses are scaled by the length of the edge associated with that constraint to determine its <i>geometric stiffness</i>.  For Axial constaints, stiffness is
+                        divided by length and for angular constraints, stiffness is multiplied by length.<br />
+                        <br />
+                        Since this is a dynamic simulation, vertices of the origami move with some notion of acceleration and velocity.  In order to
+                        keep the system stable and help it converge to a static solution, <a target="_blank" href="https://en.wikipedia.org/wiki/Harmonic_oscillator#Damped_harmonic_oscillator">
+                            damping
+                        </a> is applied to slow the motion of the vertices.  The <b>Damping</b> slider allows you to control the amount of damping
+                        present in the simulation.  Decreasing damping makes the simulation more "springy".
+                        It may be useful to temporarily turn down damping to help the simulation more quickly converge towards its static solution - especially
+                        for patterns that take a long time to curl.<br />
+                        <br />
+                        A <b>Numerical Integration</b> technique is used to integrate acceleration into velocity and position for each time step of the simulation.
+                        Different integration techniques have different associated computational cost, error, and stability.  This app allows you to choose
+                        between two different integration techniques: <a href="https://en.wikipedia.org/wiki/Euler_method" target="_blank">Euler Integration</a>
+                        is the simplest type of numerical integration (first order) with large associated error, and
+                        <a href="https://en.wikipedia.org/wiki/Verlet_integration" target="_blank">Verlet Integration</a> is a second order integration technique
+                        with lower error and better stability than Euler.
+                    </p>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div class="modal fade" id="aboutDynamicSimModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-med">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p>
+                        <b>COMPLIANT DYNAMIC SIMULATION</b><br /><br />
+                        ....
+                    </p>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div class="modal fade" id="aboutStaticSimModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-med">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p>
+                        <b>COMPLIANT STATIC SIMULATION</b><br /><br />
+                        ....
+                    </p>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div class="modal fade" id="aboutRigidSimModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-med">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p>
+                        <b>RIGID STATIC SIMULATION</b><br /><br />
+                        ....
+                    </p>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div class="modal fade" id="aboutAxialStrainModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p>
+                        <b>STRAIN VISUALIZATION</b><br /><br />
+                        <a href="https://en.wikipedia.org/wiki/Deformation_(mechanics)#Engineering_strain" target="_blank">
+                            Cauchy strain or engineering strain
+                        </a> is a unitless measurement of how much a material is being stretched or compressed under load.
+                        The <b>Strain Visualization</b> illustrates the strain across an origami sheet by mapping it to a color from blue (no strain) to red (max strain).<br /><br />
+                        <img style="width: 100%;" src="assets/doc/strain.jpg" />
+                    </p>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div class="modal fade" id="aboutUserInteractionModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p>
+                        <b>USER INTERACTION</b><br /><br />
+                        Toggle this control to enable/disable mouse interaction with the origami model.  When enabled,
                         mousing over the model will display a highlighter; clicking and dragging allows you to
                         interact with the model in real time.  Very vigorous interactions with the model may cause it
                         to pop into a strange configuration that it can't escape - use the <b>Reset</b> button to start
                         the simulation again from a flat state.
                     </p>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<div class="modal fade" id="changeRotationSpeedModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog sm">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <p><b>ROTATION SPEED</b><br/><br/>
-                    Speed : &nbsp;&nbsp;<input id="rotationSpeed" value="" placeholder="" class="float form-control" type="text"> &nbsp;&nbsp;<span class="smallTxt">( radians per frame )</span>
-                </p>
-            </div>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<div class="modal fade" id="changeBackgroundModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog sm">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <p><b>BACKGROUND COLOR</b><br/><br/>
-                    Color (rgb hex) : &nbsp;&nbsp;<input id="backgroundColor" value="" placeholder="" class="hexVal form-control" type="text"><br/>
-                    <span class="smallTxt">Hex colors are 6 digit alphanumeric codes that specify different colors.  You can get these codes using a <a href="https://www.webpagefx.com/web-design/color-picker/" target="_blank">color picker</a>.</span>
-                </p>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<div class="modal fade" id="importSettingsModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog sm">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <p><b>SVG IMPORT SETTINGS</b><br/><br/>
-                    Vertex merge tolerance (px) : &nbsp;&nbsp;<input id="vertTol" value="" placeholder="" class="float form-control" type="text">
-                    <div class="smallTxt">Vertices within this px tolerance in the SVG will be merged into one.  It is recommended to keep this number above zero.</div>
-                </p>
-                <!-- for curved folging -->
-                <p><b>For curved folding</b>
-                    <label class="checkbox" for="curvedLines">
-                        <input id="curvedLines" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
-                        crease pattern contains curves
-                    </label>
-                    <div class="smallTxt">Check this box if the crease pattern contains curves.</div>
-                </p>
-                <div id="curvedCreaseImportOptions">
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div class="modal fade" id="changeRotationSpeedModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog sm">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                     <p>
-                        Intervals of vertices for discretization (px) : &nbsp;&nbsp;<input id="vertInt" value="" placeholder="" class="float form-control" type="text">
-                        <div class="smallTxt">Curves and borderlines are divided into segments by this value. It is recommended to keep this number above zero.</div>
-                    </p>
-                    <p>
-                        Approximation tolerance of curves (px) : &nbsp;&nbsp;<input id="apprCurve" value="" placeholder="" class="float form-control" type="text">
-                        <div class="smallTxt">Curves are approximated by polylines. The smaller the value, the higher the quality of the approximation.</div>
+                        <b>ROTATION SPEED</b><br /><br />
+                        Speed : &nbsp;&nbsp;<input id="rotationSpeed" value="" placeholder="" class="float form-control" type="text"> &nbsp;&nbsp;<span class="smallTxt">( radians per frame )</span>
                     </p>
                 </div>
             </div>
-            <div class="modal-footer">
-                <div id="tipImportSVG" class="smallTxt">Having trouble?  See these <a class="goToImportInstructions" href="#">SVG Import Tips</a>.</div>
-                <button id="doSVGImport" type="button" class="actionButton btn btn-success" data-dismiss="modal">Import SVG</button>
-            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div class="modal fade" id="changeBackgroundModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog sm">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p>
+                        <b>BACKGROUND COLOR</b><br /><br />
+                        Color (rgb hex) : &nbsp;&nbsp;<input id="backgroundColor" value="" placeholder="" class="hexVal form-control" type="text"><br />
+                        <span class="smallTxt">Hex colors are 6 digit alphanumeric codes that specify different colors.  You can get these codes using a <a href="https://www.webpagefx.com/web-design/color-picker/" target="_blank">color picker</a>.</span>
+                    </p>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div class="modal fade" id="importSettingsModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog sm">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p>
+                        <b>SVG IMPORT SETTINGS</b><br /><br />
+                        Vertex merge tolerance (px) : &nbsp;&nbsp;<input id="vertTol" value="" placeholder="" class="float form-control" type="text">
+                        <div class="smallTxt">Vertices within this px tolerance in the SVG will be merged into one.  It is recommended to keep this number above zero.</div>
+                    </p>
+                    <!-- for curved folging -->
+                    <p>
+                        <b>For curved folding</b>
+                        <label class="checkbox" for="curvedLines">
+                            <input id="curvedLines" data-toggle="checkbox" class="custom-checkbox layersSelector" type="checkbox"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+                            crease pattern contains curves
+                        </label>
+                        <div class="smallTxt">Check this box if the crease pattern contains curves.</div>
+                    </p>
+                    <div id="curvedCreaseImportOptions">
+                        <p>
+                            Intervals of vertices for discretization (px) : &nbsp;&nbsp;<input id="vertInt" value="" placeholder="" class="float form-control" type="text">
+                            <div class="smallTxt">Curves and borderlines are divided into segments by this value. It is recommended to keep this number above zero.</div>
+                        </p>
+                        <p>
+                            Approximation tolerance of curves (px) : &nbsp;&nbsp;<input id="apprCurve" value="" placeholder="" class="float form-control" type="text">
+                            <div class="smallTxt">Curves are approximated by polylines. The smaller the value, the higher the quality of the approximation.</div>
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div id="tipImportSVG" class="smallTxt">Having trouble?  See these <a class="goToImportInstructions" href="#">SVG Import Tips</a>.</div>
+                    <button id="doSVGImport" type="button" class="actionButton btn btn-success" data-dismiss="modal">Import SVG</button>
+                </div>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<div class="modal fade" id="noSupportModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-body">
-                This app uses GPU functions that are not supported by this device/browser,
-                please try again on desktop with Chrome/Firefox.<br/>
+    </div><!-- /.modal -->
+    <div class="modal fade" id="noSupportModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    This app uses GPU functions that are not supported by this device/browser,
+                    please try again on desktop with Chrome/Firefox.<br />
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div id="authorMoreInfo">
-    <div id="authorContent">
-        <div id="squareMaze">
-            This file was generated by <a href="http://erikdemaine.org/fonts/maze/" target="_blank">Maze Folder</a>,
-            an app by <a href="http://erikdemaine.org/" target="_blank">Erik Demaine</a>,
-            <a href="http://martindemaine.org/" target="_blank">Martin Demaine</a>,
-            and <a href="http://jasonku.mit.edu/" target="_blank">Jason Ku</a> that creates crease patterns for any raised maze on a square grid.
-            Based on the paper <a href="http://erikdemaine.org/papers/MazeFolding_Origami5/paper.pdf" target="_blank">Folding Any
-            Orthogonal Maze</a> by the same authors.
-        </div>
-        <div id="huffmanTessellations">
-            Designed by <a href="https://en.wikipedia.org/wiki/David_A._Huffman" target="_blank">David Huffman</a>.  Crease pattern adapted from
-            the paper <a href="http://erikdemaine.org/papers/HuffmanTess_JMD2013/paper.pdf" target="_blank">Reconstructing David Huffman's Origami Tessellations</a>.
-        </div>
-        <div id="huffmanCurved">
-            Designed by <a href="https://en.wikipedia.org/wiki/David_A._Huffman" target="_blank">David Huffman</a>.  More info about
-            Huffman's curved crease folding can be found in the paper <a href="http://erikdemaine.org/papers/Huffman_Origami5/paper.pdf" target="_blank">
-            Reconstructing David Huffman’s Legacy in Curved-Crease Folding</a> and the thesis <a href="https://dspace.mit.edu/handle/1721.1/93013" target="_blank">
-            Computational design with curved creases : David Huffman's approach to paperfolding</a>.
-        </div>
-        <div id="reschTessellations">
-            Designed by <a href="http://www.ronresch.org/ronresch/" target="_blank">Ron Resch</a>.
-        </div>
-        <div id="pakin">
-            Conventional paper airplane.  Pattern entered by <a href="https://www.pakin.org/~scott" target="_blank">Scott Pakin</a>.
-        </div>
-        <div id="langTessellations">
-            Designed by <a href="http://www.langorigami.com/" target="_blank">Robert Lang</a>.  All original
-            crease patterns can be found on <a href="http://www.langorigami.com/crease-patterns" target="_blank">Lang's website</a>.
-        </div>
-        <div id="langTreemaker">
-            Designed by <a href="http://www.langorigami.com/" target="_blank">Robert Lang</a> using <a href="http://www.langorigami.com/article/treemaker" target="_blank">Treemaker</a>.  More info
-            about Lang's Treemaker software can be found in the <a href="http://www.langorigami.com/files/articles/TreeMkr40.pdf" target="_blank">Treemaker Manual</a> or in the book
-            <a href="http://www.langorigami.com/publication/origami-design-secrets-2nd-edition" target="_blank">Origami Design Secrets</a>.  All original
-            crease patterns can be found on <a href="http://www.langorigami.com/crease-patterns" target="_blank">Lang's website</a>.
-        </div>
-        <div id="moveSlowly">
-            Move <b>Fold Percent</b> slowly for this pattern to fold correctly!
-        </div>
-        <div id="skinnyTriangles">
-            When this pattern is triangulated (during the setup of the simulation) it forms many skinny triangles,
-            these triangles are very unstable as the pattern folds.
-        </div>
-        <div id="hypar">
-            Alternating asymmetric triangulation of hypar from <a href="http://erikdemaine.org/papers/Hypar_GC/paper.pdf" target="_blank">(Non)existence of Pleated Folds:
-            How Paper Folds Between Creases</a>.
-        </div>
-        <div id="randlett">
-            Designed by <a href="https://en.wikipedia.org/wiki/Samuel_Randlett" target="_blank">Samuel Randlett</a>.
-        </div>
-        <div id="squareTwist">
-            Comparison of square twist bistability, inspired by the paper
-            <a href="http://cohengroup.lassp.cornell.edu/projects/bistable-origami-and-hidden-degrees-freedom" target="_blank">
-                Origami structures with a critical transition to bistability arising from hidden degrees of freedom</a>.
-            Switch to strain visualization to compare patterns.
-        </div>
-        <div id="miuraOri">
-            Designed by <a href="https://en.wikipedia.org/wiki/Miura_fold" target="_blank">Koryo Miura</a>.
-        </div>
-        <div id="sam">
-            Designed by <a href="http://www.mit.edu/~calisch/" target="_blank">Sam Calisch</a>.
-        </div>
-        <div id="kreuter">
-            Designed by <a href="http://www.eascay.eu/" target="_blank">Johann Kreuter</a>.
-        </div>
-        <div id="mitani">
-            Designed by <a href="https://mitani.cs.tsukuba.ac.jp/en/" target="_blank">Jun Mitani</a>.
-        </div>
-        <div id="mitaniCCbook">
-            Designed by <a href="https://mitani.cs.tsukuba.ac.jp/en/" target="_blank">Jun Mitani</a>, crease pattern from the book <a href="https://mitani.cs.tsukuba.ac.jp/book/curved_folding/index.html" target="_blank">Curved-Folding Origami Design</a>.
-        </div>
-        <div id="mitani3Dbook">
-            Designed by <a href="https://mitani.cs.tsukuba.ac.jp/en/" target="_blank">Jun Mitani</a>, crease pattern from the book <a href="https://mitani.cs.tsukuba.ac.jp/book/3d_origami_art/index.html" target="_blank">3D Origami Art</a>.
-        </div>
-        <div id="fellerKwan">
-            Designed by <a href="https://www.instagram.com/polyscopes/" target="_blank">Kendrick Feller</a> based on the Spidron Tessellation by Daniel Kwan and similar spiral tessellations by Ekaterina Lukasheva.
-        </div>
-        <div id="fellerSmocked">
-            Designed by <a href="https://www.instagram.com/polyscopes/" target="_blank">Kendrick Feller</a> based on a <a href="https://www.flickr.com/photos/dasssa/12455183674" target="_blank">smocked pattern</a> based on the origami of Alessandro Beber.
-        </div>
-        <div id="popupology">
-            Designed by Elod Beregszaszi, original patterns available at <a href="http://www.popupology.co.uk/galleries" target="_blank">
-            Popupology</a>.
-        </div>
-        <div id="ullagami">
-            Designed by Ullagami, original pattern available at <a href="http://ullagami.com/how-to.php" target="_blank">
-            Ullagami</a>.
-        </div>
-        <div id="whirlpool">
-            Designed by Tomoko Fuse.  Crease pattern by <a href="http://www.happyfolding.com/" target="_blank">
-            Sara Adams</a>.  Create your own variations using David O'Sullivan's <a href="https://observablehq.com/@dosull/tomoko-fuse-spiral-crease-patterns" target="_blank">parametric whirlpool design tool</a>.
-        </div>
-        <div id="miyamotoHappy">
-            Designed by <a href="https://www.flickr.com/photos/yoshinobu_miyamoto/" target="_blank">Yoshinobu Miyamoto</a>.  Crease
-            pattern from <a href="http://www.happyfolding.com/files/Miyamoto-RES_patterns.pdf" target="_blank">Happy Folding</a>.
-        </div>
-        <div id="polygami">
-            This file was generated by <a href="https://alam-shahul.github.io/Polygami/" target="_blank">Polygami</a>,
-            an app by Shahul Alam,
-            Lauren Huang,
-            and Mahi Shafiullah that creates crease patterns for any 2D arrangement of voxels on a square grid.
-        </div>
-        <div id="bistable">
-            Allow this pattern to fold, then select <b>Allow User Interaction</b> (Advanced Options right menu) and drag the central vertex
-            to pop into into an alternate, inverted configuration.
-        </div>
-        <div id="moosersTrain">
-            Original design by Emmanuel Mooser. Crease pattern corrected and modified for rigid origami by William Gardner.
-        </div>
-        <div id="gardner">
-            Based on Flower Tower design by Chris K. Palmer. Crease pattern files generated by William Gardner.
-        </div>
-        <div id="konjevod">
-            Designed by <a href="https://www.organicorigami.com/" target="_blank">Goran Konjevod</a>.  Try folding these to ~65% and letting them settle to a curved shape.
-        </div>
-        <div id="milliron">
-            Designed by Garrett Milliron based on the paper <a href="https://www.pnas.org/content/116/52/26407" target="_blank">"Programmable active kirigami metasheets with more freedom of actuation."</a>
-            Generate more variations in <a href="https://observablehq.com/@gradies/auxetic-pleated-kirigami" target="_blank">this parametric design tool</a> for auxetic pleated kirigami.
-        </div>
-        <div id="lukasheva">
-            Designed by <a href="https://www.instagram.com/ekaterina.lukasheva/" target="_blank">Ekaterina Lukasheva</a>.
-        </div>
-        <div id="lukashevaCCbook">
-            Designed by <a href="https://www.instagram.com/ekaterina.lukasheva/" target="_blank">Ekaterina Lukasheva</a>, crease pattern from the book <a href="https://www.amazon.com/dp/0997311991" target="_blank">Curved Origami</a>.
+    <div id="authorMoreInfo">
+        <div id="authorContent">
+            <div id="squareMaze">
+                This file was generated by <a href="http://erikdemaine.org/fonts/maze/" target="_blank">Maze Folder</a>,
+                an app by <a href="http://erikdemaine.org/" target="_blank">Erik Demaine</a>,
+                <a href="http://martindemaine.org/" target="_blank">Martin Demaine</a>,
+                and <a href="http://jasonku.mit.edu/" target="_blank">Jason Ku</a> that creates crease patterns for any raised maze on a square grid.
+                Based on the paper <a href="http://erikdemaine.org/papers/MazeFolding_Origami5/paper.pdf" target="_blank">
+                    Folding Any
+                    Orthogonal Maze
+                </a> by the same authors.
+            </div>
+            <div id="huffmanTessellations">
+                Designed by <a href="https://en.wikipedia.org/wiki/David_A._Huffman" target="_blank">David Huffman</a>.  Crease pattern adapted from
+                the paper <a href="http://erikdemaine.org/papers/HuffmanTess_JMD2013/paper.pdf" target="_blank">Reconstructing David Huffman's Origami Tessellations</a>.
+            </div>
+            <div id="huffmanCurved">
+                Designed by <a href="https://en.wikipedia.org/wiki/David_A._Huffman" target="_blank">David Huffman</a>.  More info about
+                Huffman's curved crease folding can be found in the paper <a href="http://erikdemaine.org/papers/Huffman_Origami5/paper.pdf" target="_blank">
+                    Reconstructing David Huffman’s Legacy in Curved-Crease Folding
+                </a> and the thesis <a href="https://dspace.mit.edu/handle/1721.1/93013" target="_blank">
+                    Computational design with curved creases : David Huffman's approach to paperfolding
+                </a>.
+            </div>
+            <div id="reschTessellations">
+                Designed by <a href="http://www.ronresch.org/ronresch/" target="_blank">Ron Resch</a>.
+            </div>
+            <div id="pakin">
+                Conventional paper airplane.  Pattern entered by <a href="https://www.pakin.org/~scott" target="_blank">Scott Pakin</a>.
+            </div>
+            <div id="langTessellations">
+                Designed by <a href="http://www.langorigami.com/" target="_blank">Robert Lang</a>.  All original
+                crease patterns can be found on <a href="http://www.langorigami.com/crease-patterns" target="_blank">Lang's website</a>.
+            </div>
+            <div id="langTreemaker">
+                Designed by <a href="http://www.langorigami.com/" target="_blank">Robert Lang</a> using <a href="http://www.langorigami.com/article/treemaker" target="_blank">Treemaker</a>.  More info
+                about Lang's Treemaker software can be found in the <a href="http://www.langorigami.com/files/articles/TreeMkr40.pdf" target="_blank">Treemaker Manual</a> or in the book
+                <a href="http://www.langorigami.com/publication/origami-design-secrets-2nd-edition" target="_blank">Origami Design Secrets</a>.  All original
+                crease patterns can be found on <a href="http://www.langorigami.com/crease-patterns" target="_blank">Lang's website</a>.
+            </div>
+            <div id="moveSlowly">
+                Move <b>Fold Percent</b> slowly for this pattern to fold correctly!
+            </div>
+            <div id="skinnyTriangles">
+                When this pattern is triangulated (during the setup of the simulation) it forms many skinny triangles,
+                these triangles are very unstable as the pattern folds.
+            </div>
+            <div id="hypar">
+                Alternating asymmetric triangulation of hypar from <a href="http://erikdemaine.org/papers/Hypar_GC/paper.pdf" target="_blank">
+                    (Non)existence of Pleated Folds:
+                    How Paper Folds Between Creases
+                </a>.
+            </div>
+            <div id="randlett">
+                Designed by <a href="https://en.wikipedia.org/wiki/Samuel_Randlett" target="_blank">Samuel Randlett</a>.
+            </div>
+            <div id="squareTwist">
+                Comparison of square twist bistability, inspired by the paper
+                <a href="http://cohengroup.lassp.cornell.edu/projects/bistable-origami-and-hidden-degrees-freedom" target="_blank">
+                    Origami structures with a critical transition to bistability arising from hidden degrees of freedom
+                </a>.
+                Switch to strain visualization to compare patterns.
+            </div>
+            <div id="miuraOri">
+                Designed by <a href="https://en.wikipedia.org/wiki/Miura_fold" target="_blank">Koryo Miura</a>.
+            </div>
+            <div id="sam">
+                Designed by <a href="http://www.mit.edu/~calisch/" target="_blank">Sam Calisch</a>.
+            </div>
+            <div id="kreuter">
+                Designed by <a href="http://www.eascay.eu/" target="_blank">Johann Kreuter</a>.
+            </div>
+            <div id="mitani">
+                Designed by <a href="https://mitani.cs.tsukuba.ac.jp/en/" target="_blank">Jun Mitani</a>.
+            </div>
+            <div id="mitaniCCbook">
+                Designed by <a href="https://mitani.cs.tsukuba.ac.jp/en/" target="_blank">Jun Mitani</a>, crease pattern from the book <a href="https://mitani.cs.tsukuba.ac.jp/book/curved_folding/index.html" target="_blank">Curved-Folding Origami Design</a>.
+            </div>
+            <div id="mitani3Dbook">
+                Designed by <a href="https://mitani.cs.tsukuba.ac.jp/en/" target="_blank">Jun Mitani</a>, crease pattern from the book <a href="https://mitani.cs.tsukuba.ac.jp/book/3d_origami_art/index.html" target="_blank">3D Origami Art</a>.
+            </div>
+            <div id="fellerKwan">
+                Designed by <a href="https://www.instagram.com/polyscopes/" target="_blank">Kendrick Feller</a> based on the Spidron Tessellation by Daniel Kwan and similar spiral tessellations by Ekaterina Lukasheva.
+            </div>
+            <div id="fellerSmocked">
+                Designed by <a href="https://www.instagram.com/polyscopes/" target="_blank">Kendrick Feller</a> based on a <a href="https://www.flickr.com/photos/dasssa/12455183674" target="_blank">smocked pattern</a> based on the origami of Alessandro Beber.
+            </div>
+            <div id="popupology">
+                Designed by Elod Beregszaszi, original patterns available at <a href="http://www.popupology.co.uk/galleries" target="_blank">
+                    Popupology
+                </a>.
+            </div>
+            <div id="ullagami">
+                Designed by Ullagami, original pattern available at <a href="http://ullagami.com/how-to.php" target="_blank">
+                    Ullagami
+                </a>.
+            </div>
+            <div id="whirlpool">
+                Designed by Tomoko Fuse.  Crease pattern by <a href="http://www.happyfolding.com/" target="_blank">
+                    Sara Adams
+                </a>.  Create your own variations using David O'Sullivan's <a href="https://observablehq.com/@dosull/tomoko-fuse-spiral-crease-patterns" target="_blank">parametric whirlpool design tool</a>.
+            </div>
+            <div id="miyamotoHappy">
+                Designed by <a href="https://www.flickr.com/photos/yoshinobu_miyamoto/" target="_blank">Yoshinobu Miyamoto</a>.  Crease
+                pattern from <a href="http://www.happyfolding.com/files/Miyamoto-RES_patterns.pdf" target="_blank">Happy Folding</a>.
+            </div>
+            <div id="polygami">
+                This file was generated by <a href="https://alam-shahul.github.io/Polygami/" target="_blank">Polygami</a>,
+                an app by Shahul Alam,
+                Lauren Huang,
+                and Mahi Shafiullah that creates crease patterns for any 2D arrangement of voxels on a square grid.
+            </div>
+            <div id="bistable">
+                Allow this pattern to fold, then select <b>Allow User Interaction</b> (Advanced Options right menu) and drag the central vertex
+                to pop into into an alternate, inverted configuration.
+            </div>
+            <div id="moosersTrain">
+                Original design by Emmanuel Mooser. Crease pattern corrected and modified for rigid origami by William Gardner.
+            </div>
+            <div id="gardner">
+                Based on Flower Tower design by Chris K. Palmer. Crease pattern files generated by William Gardner.
+            </div>
+            <div id="konjevod">
+                Designed by <a href="https://www.organicorigami.com/" target="_blank">Goran Konjevod</a>.  Try folding these to ~65% and letting them settle to a curved shape.
+            </div>
+            <div id="milliron">
+                Designed by Garrett Milliron based on the paper <a href="https://www.pnas.org/content/116/52/26407" target="_blank">"Programmable active kirigami metasheets with more freedom of actuation."</a>
+                Generate more variations in <a href="https://observablehq.com/@gradies/auxetic-pleated-kirigami" target="_blank">this parametric design tool</a> for auxetic pleated kirigami.
+            </div>
+            <div id="lukasheva">
+                Designed by <a href="https://www.instagram.com/ekaterina.lukasheva/" target="_blank">Ekaterina Lukasheva</a>.
+            </div>
+            <div id="lukashevaCCbook">
+                Designed by <a href="https://www.instagram.com/ekaterina.lukasheva/" target="_blank">Ekaterina Lukasheva</a>, crease pattern from the book <a href="https://www.amazon.com/dp/0997311991" target="_blank">Curved Origami</a>.
+            </div>
         </div>
     </div>
-</div>
-<div class="modal fade" id="screenCaptureModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-    <div class="modal-dialog modal-med">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <b><span class="video">SCREEN RECORDING</span>
-                    <span class="gif">ANIMATED GIF</span>
-                    <span class="png">SAVE PNG</span>
-                </b><br/><br/>
-                <span class="gif video"><a href="#" id="setupAnimation" class="displayBlock btn btn-lg btn-default">Configure Fold Percent Animation</a>&nbsp;&nbsp;<span class="smallTxt" id="foldPercentAnimationStatus"></span><br/><br/></span>
-                Filename: &nbsp;&nbsp;<input id="screenRecordFilename" value="" placeholder="" class="bigInput text form-control" type="text">
+    <div class="modal fade" id="screenCaptureModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+        <div class="modal-dialog modal-med">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <b>
+                        <span class="video">SCREEN RECORDING</span>
+                        <span class="gif">ANIMATED GIF</span>
+                        <span class="png">SAVE PNG</span>
+                    </b><br /><br />
+                    <span class="gif video"><a href="#" id="setupAnimation" class="displayBlock btn btn-lg btn-default">Configure Fold Percent Animation</a>&nbsp;&nbsp;<span class="smallTxt" id="foldPercentAnimationStatus"></span><br /><br /></span>
+                    Filename: &nbsp;&nbsp;<input id="screenRecordFilename" value="" placeholder="" class="bigInput text form-control" type="text">
                     <span class="gif">.gif</span>
                     <span class="video">.webm</span>
                     <span class="png">.png</span>
-                <br/><br/>
-                Scale: &nbsp;&nbsp;<input id="capturerScale" value="" placeholder="" class="float form-control" type="text"> <br/>
-                <span class="smallTxt">Increasing scale allows you to record at higher than screen resolution.</span><br/><br/>
-                Dimensions: &nbsp;&nbsp;<b><span id="canvasDimensions"></span></b><br/>
-                <span class="smallTxt">Resize browser window to change aspect ratio.</span><br/><br/>
-                <span class="video">
-                    Quality ( 0-63 ): &nbsp;&nbsp;<input id="capturerQuality" value="" placeholder="" class="float int form-control" type="text"><br/><br/>
-                    Framerate ( 1-60 fps ): &nbsp;&nbsp;<input id="capturerFPS" value="" placeholder="" class="float int form-control" type="text"><br/><br/>
-                </span>
-                <span class="gif">
-                    Framerate ( 1-60 fps ): &nbsp;&nbsp;<input id="gifFPS" value="" placeholder="" class="float int form-control" type="text"><br/><br/>
-                </span>
-                <span class="gif video">Num simulation steps per frame: &nbsp;&nbsp;<input value="" placeholder="" class="numStepsPerRender int form-control" type="text"><br/><br/></span>
-                <span class="smallTxt">Notes: This feature captures the output of the canvas only - no UI or cursor
-                    will be included.<span class="gif video">  Do not resize window while recording.  You can increase the
-                amount of motion per frame by increasing the "Num simulation steps per frame".</span>  Check the <b>View</b> menu (above) for more rendering options.</span><br/>
-            </div>
-            <div class="modal-footer">
-                <button id="doGifRecord" type="button" class="gif actionButton btn btn-success" data-dismiss="modal">Start</button>
-                <button id="doScreenRecord" type="button" class="video actionButton btn btn-success" data-dismiss="modal">Start</button>
-                <button id="doPNGCapture" type="button" class="png actionButton btn btn-success" data-dismiss="modal">Save</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="animationSetupModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-    <div class="modal-dialog modal-med">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <b>FOLD PERCENT ANIMATION SETUP</b><br/>
-                <p>
-                    Current Fold Percent: &nbsp;&nbsp;<input value="" placeholder="" id="currentFoldPercent" class="float form-control" type="text">&nbsp;&nbsp;%<br/><br/>
-                    <span id="animationSetupHelp"></span>
-                    <ul id="animationHTML"></ul>
-                    <div class="btns"><a href="#" id="addDelay" class="displayBlock btn btn-lg btn-warning">Add Delay</a>&nbsp;&nbsp;&nbsp;
-                    <a href="#" id="addAnimationItem" class="displayBlock btn btn-lg btn-success">Add Animation</a></div>
-                </p>
-            </div>
-            <div class="modal-footer">
-                <button id="finishAnimationSetup" type="button" class="actionButton btn btn-success" data-dismiss="modal">Done</button>
+                    <br /><br />
+                    Scale: &nbsp;&nbsp;<input id="capturerScale" value="" placeholder="" class="float form-control" type="text"> <br />
+                    <span class="smallTxt">Increasing scale allows you to record at higher than screen resolution.</span><br /><br />
+                    Dimensions: &nbsp;&nbsp;<b><span id="canvasDimensions"></span></b><br />
+                    <span class="smallTxt">Resize browser window to change aspect ratio.</span><br /><br />
+                    <span class="video">
+                        Quality ( 0-63 ): &nbsp;&nbsp;<input id="capturerQuality" value="" placeholder="" class="float int form-control" type="text"><br /><br />
+                        Framerate ( 1-60 fps ): &nbsp;&nbsp;<input id="capturerFPS" value="" placeholder="" class="float int form-control" type="text"><br /><br />
+                    </span>
+                    <span class="gif">
+                        Framerate ( 1-60 fps ): &nbsp;&nbsp;<input id="gifFPS" value="" placeholder="" class="float int form-control" type="text"><br /><br />
+                    </span>
+                    <span class="gif video">Num simulation steps per frame: &nbsp;&nbsp;<input value="" placeholder="" class="numStepsPerRender int form-control" type="text"><br /><br /></span>
+                    <span class="smallTxt">
+                        Notes: This feature captures the output of the canvas only - no UI or cursor
+                        will be included.<span class="gif video">
+                            Do not resize window while recording.  You can increase the
+                            amount of motion per frame by increasing the "Num simulation steps per frame".
+                        </span>  Check the <b>View</b> menu (above) for more rendering options.
+                    </span><br />
+                </div>
+                <div class="modal-footer">
+                    <button id="doGifRecord" type="button" class="gif actionButton btn btn-success" data-dismiss="modal">Start</button>
+                    <button id="doScreenRecord" type="button" class="video actionButton btn btn-success" data-dismiss="modal">Start</button>
+                    <button id="doPNGCapture" type="button" class="png actionButton btn btn-success" data-dismiss="modal">Save</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div id="recordStatus">
-    <a href="#" id="stopRecord" class="btn btn-lg btn-danger">Stop Record <span></span></a>
-</div>
-<a href="#" id="aboutCorner">?</a>
+    <div class="modal fade" id="animationSetupModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+        <div class="modal-dialog modal-med">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <b>FOLD PERCENT ANIMATION SETUP</b><br />
+                    <p>
+                        Current Fold Percent: &nbsp;&nbsp;<input value="" placeholder="" id="currentFoldPercent" class="float form-control" type="text">&nbsp;&nbsp;%<br /><br />
+                        <span id="animationSetupHelp"></span>
+                        <ul id="animationHTML"></ul>
+                        <div class="btns">
+                            <a href="#" id="addDelay" class="displayBlock btn btn-lg btn-warning">Add Delay</a>&nbsp;&nbsp;&nbsp;
+                            <a href="#" id="addAnimationItem" class="displayBlock btn btn-lg btn-success">Add Animation</a>
+                        </div>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button id="finishAnimationSetup" type="button" class="actionButton btn btn-success" data-dismiss="modal">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="recordStatus">
+        <a href="#" id="stopRecord" class="btn btn-lg btn-danger">Stop Record <span></span></a>
+    </div>
+    <a href="#" id="aboutCorner">?</a>
+    <img id="svgTexture" src="Testpurple.svg" style="display: none;">
 </body>
 </html>

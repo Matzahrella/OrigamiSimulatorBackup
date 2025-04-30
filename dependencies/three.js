@@ -42000,6 +42000,22 @@
 
 	}() );
 
+// Setup Three.js scene, camera, renderer, etc.
+
+// Create a material
+const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+
+// Load SVG texture
+const textureLoader = new THREE.TextureLoader();
+const svgTexture = textureLoader.load('Testpurple.svg');
+material.map = svgTexture;
+
+// Create a mesh with the material
+const geometry = new THREE.BoxGeometry(1, 1, 1);
+const mesh = new THREE.Mesh(geometry, material);
+scene.add(mesh);
+
+
 	ArrowHelper.prototype.setLength = function ( length, headLength, headWidth ) {
 
 		if ( headLength === undefined ) headLength = 0.2 * length;
